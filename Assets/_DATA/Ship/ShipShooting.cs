@@ -29,7 +29,10 @@ public class ShipShooting : MonoBehaviour
         if (this.shootDelay > this.shootTimer) return;
         this.shootTimer = 0;
         Quaternion rotation = this.transform.parent.rotation;
-        Transform newBullet = Instantiate(bullet, this.transform.position, rotation);
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne,transform.position, rotation);
+        if (newBullet == null) return;
+
+
         newBullet.gameObject.SetActive(true);
     }
 

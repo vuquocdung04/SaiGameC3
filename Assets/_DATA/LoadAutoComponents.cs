@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class LoadAutoComponents : MonoBehaviour
 {
+    private void Awake()
+    {
+        LoadComponents();
+    }
+
     private void Reset()
     {
         this.LoadComponents();
