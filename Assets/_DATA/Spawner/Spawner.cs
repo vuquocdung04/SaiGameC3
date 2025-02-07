@@ -4,13 +4,17 @@ using UnityEngine;
 
 public abstract class Spawner : Singleton<Spawner>
 {
+    [SerializeField] protected Transform holders;
+    [Space(10)]
     [SerializeField] protected List<Transform> prefabs;
+    [SerializeField] protected List<Transform> poolObjs;
 
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadBullets();
+        this.LoadHolders();
     }
 
     protected virtual void LoadBullets()
@@ -25,6 +29,13 @@ public abstract class Spawner : Singleton<Spawner>
         HidePrefabs();
     }
 
+    protected virtual void LoadHolders()
+    {
+        if (this.holders != null) return;
+        this.holders = transform.Find("Holders");
+    }
+
+
     protected virtual void HidePrefabs()
     {
         foreach (Transform prefab in prefabs)
@@ -33,17 +44,41 @@ public abstract class Spawner : Singleton<Spawner>
         }
     }
 
-    public Transform Spawn(string prefabName,Vector2 spawnPos, Quaternion rotation)
+    public virtual Transform Spawn(string prefabName,Vector2 spawnPos, Quaternion rotation)
     {
 
         Transform prefab = GetPrefabName(prefabName);
         if (prefab == null) return null;
 
-        Transform newBullet = Instantiate(prefab, spawnPos,rotation);
+        Transform newPrefab = this.GetObjFromPool(prefab);
+        newPrefab.SetPositionAndRotation(spawnPos,rotation);
 
-        return newBullet;
+        newPrefab.parent = this.holders;
+        return newPrefab;
 
     }
+
+    protected virtual Transform GetObjFromPool(Transform prefab)
+    {
+        foreach (Transform poolObj in this.poolObjs)
+        {
+            if (poolObj.name == prefab.name)
+            {
+                this.poolObjs.Remove(poolObj);
+                return poolObj;
+            }
+        }
+
+        Transform newPrefab = Instantiate(prefab);
+        newPrefab.name = prefab.name;
+        return newPrefab;
+    }
+
+    public virtual void Despawn(Transform obj)
+    {
+        poolObjs.Add(obj);
+        obj.gameObject.SetActive(false);
+    } 
 
     protected virtual Transform GetPrefabName(string name)
     {
