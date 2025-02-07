@@ -13,4 +13,4 @@
 		- giải pháp: biến spawner thành 1 genetic class luôn
 	- Pooling a sai có vấn đề:
 		- bản chất giống, thay vì destroy đi thì setActive nó để tái sử dụng
-		- tuy nhiên những cái nào sử dụng được thì lại add vào list và khi lấy ra thì xóa khỏi list. Dẫn tới ảnh hưởng tới hiệu năng thì nó cứ add và remove list liên tục
+		- tuy nhiên những cái nào sử dụng được thì lại add vào list và khi lấy ra thì xóa khỏi list. Dẫn tới ảnh hưởng tới hiệu năng vì nó cứ add và remove list liên tục
