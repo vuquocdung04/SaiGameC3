@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Spawner : Singleton<Spawner>
+public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
 {
     [SerializeField] protected Transform holders;
     [Space(10)]
