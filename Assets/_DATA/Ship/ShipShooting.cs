@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShooting : MonoBehaviour
+public class ShipShooting : LoadAutoComponents
 {
     [SerializeField] protected bool isShootting;
 
     [SerializeField] protected float shootDelay = 1f;
     [SerializeField] protected float shootTimer = 0f;
-
-    [SerializeField] protected Transform bullet;
     private void Update()
     {
         this.IsShooting();
