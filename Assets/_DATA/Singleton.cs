@@ -13,7 +13,7 @@ public abstract class Singleton<T> : LoadAutoComponents where T : LoadAutoCompon
     /// <summary>
     /// Create the singleton instance if needed and call OnSingletonAwake().
     /// </summary>
-    private void Awake()
+    protected override void Awake()
     {
         if (Instance == null)
         {

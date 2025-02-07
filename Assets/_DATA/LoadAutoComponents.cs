@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoadAutoComponents : MonoBehaviour
 {
-    private void Awake()
+    protected virtual void Awake()
     {
         LoadComponents();
     }
