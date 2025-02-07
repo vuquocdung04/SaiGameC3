@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 1634886239}
   - component: {fileID: 1634886240}
   m_Layer: 0
-  m_Name: SpawnPoints
+  m_Name: JunkSpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,12 +818,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1634886238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddbc5922985a4ba43bb3e078a1fabdf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 26285227a4e36b94bbb030316d8ba7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1256217326}
   - {fileID: 1668209074}
+  - {fileID: 1729808553}
 --- !u!1 &1668209073
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junkSpawner: {fileID: 1801647824}
   junkRandom: {fileID: 1801647823}
-  spawnPoints: {fileID: 1634886240}
+  junkSpawnPoints: {fileID: 0}
 --- !u!114 &1801647823
 MonoBehaviour:
   m_ObjectHideFlags: 0
