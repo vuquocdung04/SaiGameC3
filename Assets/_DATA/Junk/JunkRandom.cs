@@ -5,7 +5,6 @@ using UnityEngine;
 public class JunkRandom : LoadAutoComponents
 {
     [SerializeField] protected JunkCtrl junkCtrl;
-
     private void Start()
     {
         InvokeRepeating(nameof(JunkSpawning),1,1);
@@ -25,14 +24,18 @@ public class JunkRandom : LoadAutoComponents
     }
 
 
+
+
     protected virtual void JunkSpawning()
     {
-        Vector3 pos = transform.position;
+        Transform ranPoint = this.junkCtrl.JunkSpawnPoints.GetRandom();
+
+        Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
 
         Transform obj = this.junkCtrl.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, pos,rot);
 
         obj.gameObject.SetActive(true);
-
     } 
+
 }
