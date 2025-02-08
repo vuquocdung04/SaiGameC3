@@ -30,13 +30,15 @@ public class ShipShooting : LoadAutoComponents
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne,transform.position, rotation);
         if (newBullet == null) return;
 
+        BulletCtrl bulletCtrl = newBullet.GetComponent<BulletCtrl>();
+        bulletCtrl.SetShooter(transform.parent);
 
         newBullet.gameObject.SetActive(true);
     }
 
     protected virtual bool IsShooting()
     {
-        this.isShootting = InputManager.Instance.onFiring == 1;
+        this.isShootting = InputManager.Instance.onFiring;
         return isShootting;
     }
 }
