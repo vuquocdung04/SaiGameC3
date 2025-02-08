@@ -16,3 +16,18 @@
 		- tuy nhiên những cái nào sử dụng được thì lại add vào list và khi lấy ra thì xóa khỏi list. Dẫn tới ảnh hưởng tới hiệu năng vì nó cứ add và remove list liên tục
 ## 8/2:
 - E19 ->
+	- E21: học về cách xoay thiên thạch (vật thể), tuy nhiên tại sao:
+		- transform.eulerAngel = new Vector3(0,0,1)
+		- transform.rotation = Quaternion.Euler(0,0,1)
+		- 2 cái trên giống nhau mà, đều quay góc => dùng Quaternion sẽ tránh được tình trạng *"Gimbal Lock"*
+	- Vậy thì *"Gimbal Lock"* là cái gì:
+		- Trong Unity (và hầu hết các hệ tọa độ 3D), một vật thể có ba trục:
+            - X (Pitch - Ngửa/Nhìn xuống)
+            - Y (Yaw - Quay trái/phải)
+            - Z (Roll - Lật ngang trái/phải)
+        - Cách dễ hiểu nhất: dùng điện thoại
+            - Cầm điện thoại theo hướng bình thường (màn hình đối diện bạn).
+            - Xoay nó lên 90° sao cho màn hình chỉ lên trời.
+            - Bây giờ thử xoay sang trái/phải (theo trục Y ban đầu).
+            - 👉 Bạn sẽ thấy nó giống như đang quay theo trục Z!
+            - Khi đó, xoay theo Y không còn hoạt động độc lập nữa, vì nó bị gộp chung với Z.
