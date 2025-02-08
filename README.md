@@ -15,7 +15,7 @@
 		- bản chất giống, thay vì destroy đi thì setActive nó để tái sử dụng
 		- tuy nhiên những cái nào sử dụng được thì lại add vào list và khi lấy ra thì xóa khỏi list. Dẫn tới ảnh hưởng tới hiệu năng vì nó cứ add và remove list liên tục
 ## 8/2:
-- E19 ->
+- E19 -> E33:
 	- 🟢E21: học về cách xoay thiên thạch (vật thể), tuy nhiên tại sao:
 		- transform.eulerAngel = new Vector3(0,0,1)
 		- transform.rotation = Quaternion.Euler(0,0,1)
