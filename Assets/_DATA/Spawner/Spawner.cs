@@ -52,9 +52,14 @@ public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
 
         Transform prefab = GetPrefabName(prefabName);
         if (prefab == null) return null;
+        return this.Spawn(prefab, spawnPos,rotation);
 
+    }
+
+    public virtual Transform Spawn(Transform prefab, Vector2 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjFromPool(prefab);
-        newPrefab.SetPositionAndRotation(spawnPos,rotation);
+        newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
         newPrefab.parent = this.holders;
         this.spawnedCount++;
@@ -85,12 +90,17 @@ public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
         this.spawnedCount--;
     } 
 
-    protected virtual Transform GetPrefabName(string name)
+    public virtual Transform GetPrefabName(string name)
     {
         foreach (Transform prefab in prefabs)
         {
             if(prefab.name == name) return prefab;
         }
         return null;
+    }
+    public virtual Transform RandomPrefab()
+    {
+        int rand = Random.Range(0, this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }

@@ -5,5 +5,4 @@ using UnityEngine;
 public class JunkSpawner : Spawner<JunkSpawner>
 {
 
-    public static string meteoriteOne = "Meteorite_1";
 }
