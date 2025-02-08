@@ -23,7 +23,6 @@ public class DamageSender : LoadAutoComponents
     public virtual void Send(DamageReceiver damageReceiver)
     {
         damageReceiver.Deduct(this.damage);
-        this.DestroyObj();
     }
 
     protected virtual void DestroyObj()
