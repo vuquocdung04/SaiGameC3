@@ -56,3 +56,7 @@
 		- Unity sẽ đọc file từ ổ đĩa và load vào Ram nếu vứt Resources ở mấy hàm start, update, onEnable,...
 		-  👉 Resources nên được lưu các thành phần nhỏ như scripttableobj nhỏ,...
 		-  👉 dùng AddressAble Tải asset động, tối ưu RAM, hỗ trợ cập nhật online
+	- 🔹E31: cơ bản rơi đồ
+		- **DropManager**: singleton quản lí DropRate
+		- **DropRate**: quản lí list<ItemSO>, tỉ lệ rơi đồ
+		- **ItemSO**: scriptableobject, quản lí tên vật phẩm

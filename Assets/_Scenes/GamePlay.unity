@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShootting: 0
-  shootDelay: 0.05
+  shootDelay: 0.1
   shootTimer: 0
 --- !u!1 &567647667
 GameObject:
@@ -743,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSender: {fileID: 1584841367}
   bulletDespawn: {fileID: 1347063490}
+  shooter: {fileID: 0}
 --- !u!1 &758343571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27655ad9bdf3b6d4cb1b9d362bc496cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   direction: {x: 1, y: 0, z: 0}
 --- !u!1 &1584841365
 GameObject:

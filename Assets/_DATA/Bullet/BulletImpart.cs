@@ -51,6 +51,9 @@ public class BulletImpart : BulletAbstract
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         this.bulletCtrl.DamageSender.Send(collision.transform);
+
+        if (collision.transform.parent == this.bulletCtrl.Shooter) return;
+
         this.CreateFXImpact(collision);
     }
 
