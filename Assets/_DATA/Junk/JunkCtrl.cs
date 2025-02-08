@@ -4,37 +4,18 @@ using UnityEngine;
 
 public class JunkCtrl : LoadAutoComponents
 {
-    [SerializeField] protected JunkSpawner junkSpawner;
-    public JunkSpawner JunkSpawner => junkSpawner;
-
-    [SerializeField] protected JunkRandom junkRandom;
-    public JunkRandom JunkRandom => junkRandom;
-
-    [SerializeField] protected JunkSpawnPoints junkSpawnPoints;
-    public JunkSpawnPoints JunkSpawnPoints => junkSpawnPoints;
+    [SerializeField] protected Transform model;
+    public Transform Model => model;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkSpawner();
-        this.LoadJunkRandom();
-        this.LoadJunkSpawnPoints();
-    }
-    protected virtual void LoadJunkSpawner()
-    {
-        if (junkSpawner != null) return;
-        junkSpawner = GetComponent<JunkSpawner>();
+        this.LoadModel();
     }
 
-    protected virtual void LoadJunkRandom()
+    protected virtual void LoadModel()
     {
-        if (junkRandom != null) return;
-        junkRandom = GetComponent<JunkRandom>();
-    }
-
-    protected virtual void LoadJunkSpawnPoints()
-    {
-        if (junkSpawnPoints != null) return;
-        junkSpawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
+        if (model != null) return;
+        this.model = transform.Find("Model");
     }
 }
