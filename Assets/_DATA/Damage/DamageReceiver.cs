@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class DamageReceiver : LoadAutoComponents
+public abstract class DamageReceiver : LoadAutoComponents
 {
     [SerializeField] protected float hp;
     [SerializeField] protected float hpMax;
@@ -67,8 +67,5 @@ public class DamageReceiver : LoadAutoComponents
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-        //for overide
-    }
+    protected abstract void OnDead();
 }

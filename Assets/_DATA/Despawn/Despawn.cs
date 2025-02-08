@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Despawn : LoadAutoComponents
 {
 
-
     private void FixedUpdate()
     {
         this.Despawning();
