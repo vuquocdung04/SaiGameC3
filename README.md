@@ -60,7 +60,7 @@
 		- **ItemCode**: quản lí enum tên item rơi
 		- **ItemSO**: là scriptableobj quản lí enum(Itemcode)
 		- **DropRate**: quản lí ItemSO, tỉ lệ rơi đồ
-		- **ItemDropSpawner**: singleton, quản lí list <DropRate>
+		- **ItemDropSpawner**: singleton, quản lí list DropRate 
 	- 🤔 cấu trúc code hơi dở vì:
 		- tên các enum == tên gameobj ở hirachie thì nó mới spawn được
 		- vì ở script Spawn method: GetPrefabname nó load các thằng con đồng thời lấy chính tên của cno luôn
