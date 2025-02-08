@@ -31,3 +31,11 @@
             - Bây giờ thử xoay sang trái/phải (theo trục Y ban đầu).
             - 👉 Bạn sẽ thấy nó giống như đang quay theo trục Z!
             - Khi đó, xoay theo Y không còn hoạt động độc lập nữa, vì nó bị gộp chung với Z.
+	- E22:  truyền nhận damage sẽ cấu trúc theo kiểu
+		- DamageSender: Gửi damage
+		- DamageReceier: Nhận damage
+		- BulletImpart: check trigger + quản lí collider + rigidbody
+		- BulletCtrl: sẽ quản lí damagesender, tránh các script khác gọi thẳng tới nó, mà phải gọi thông qua BulletCtrl
+		- BulletAbstract: sẽ quản lí BulletCtrl, để khi thằng những thằng con muốn gọi tới thằng cha là: BulletCtrl thì phải kế thừa từ BulletAbstract
+		- 👉Vậy thì tại sao phải phức tạp thế, sao không singleton BulletCtrl luôn, hoặc trong thằng con thì Gọi đến LoadBulletCtrl ?
+		- 👉 Cấu trúc này sau để dùng observer, hiểu để tại sao observer làm code trông đỡ bị ràng buộc hơn
