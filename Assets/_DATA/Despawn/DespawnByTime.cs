@@ -4,9 +4,32 @@ using UnityEngine;
 
 public class DespawnByTime : Despawn
 {
+    [SerializeField] protected float delay;
+    [SerializeField] protected float timer;
+
+    void OnEnable()
+    {
+        this.ResetTimer();
+    }
+
+    protected override void ResetValue()
+    {
+        base.ResetValue();
+        this.delay = 2f;
+        this.timer = 0f;
+    }
+
+    protected virtual void ResetTimer()
+    {
+        this.timer = 0;
+    }
+
+    // TODO  finish
+
     protected override bool CanDespawn()
     {
-        throw new System.NotImplementedException();
+        this.timer += Time.fixedDeltaTime;
+        return (this.timer > this.delay);
     }
 
 }
