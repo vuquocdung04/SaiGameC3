@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
 {
     [SerializeField] protected Transform holders;
+    [SerializeField] protected int spawnedCount = 0;
+    public int SpawnedCount => spawnedCount;
+
     [Space(10)]
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
@@ -54,6 +57,7 @@ public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
         newPrefab.SetPositionAndRotation(spawnPos,rotation);
 
         newPrefab.parent = this.holders;
+        this.spawnedCount++;
         return newPrefab;
 
     }
@@ -78,6 +82,7 @@ public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
     {
         poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        this.spawnedCount--;
     } 
 
     protected virtual Transform GetPrefabName(string name)

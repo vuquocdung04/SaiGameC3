@@ -9,7 +9,7 @@ public class JunkFly : ParentFly
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.speed = 0.1f;
+        this.speed = 0.5f;
         this.minCam = -17;
         this.maxCam = 17;
     }

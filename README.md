@@ -39,3 +39,15 @@
 		- **BulletAbstract**: sẽ quản lí BulletCtrl, để khi thằng những thằng con muốn gọi tới thằng cha là: BulletCtrl thì phải kế thừa từ BulletAbstract
 		- 👉Vậy thì tại sao phải phức tạp thế, sao không singleton BulletCtrl luôn, hoặc trong thằng con thì Gọi đến LoadBulletCtrl ?
 		- 👉 Cấu trúc này sau để dùng observer, hiểu để tại sao observer làm code trông đỡ bị ràng buộc hơn
+	- E23: kiểm soát số lượng junk spawn
+	- Trong folder code lúc này có:
+		- Spawner
+		- JunkSpawner
+		- JunkSpawnerCtrl
+		- JunkSpawnerRamdom
+		- JunkSpawnerPoints
+	- 👉 cấu trúc nó sẽ như thế này:
+		- Spawner: kiểm soát spawn, despawn => để pooling
+		- JunkSpawner: là đại diện spawner cho vũ trụ Junk =))
+		- Thì từ giờ các JunkSpawnerCtrl, JunkSpawnerRamdom, JunkSpawnerPoints nếu cần sẽ gọi tới thằng JunkSpawner thay vì gọi trực tiếp tới Spawner
+		- 👉 Hiểu đơn giản: JunkSpawner: Chính là Bản sao của Spawner ( thật ra là con của nó)
