@@ -15,6 +15,7 @@ public class DamageReceiver : LoadAutoComponents
         base.ResetValue();
         this.hp = 1f;
         this.hpMax = 10f;
+        this.ReBorn();
     }
 
     protected override void LoadComponents()
@@ -38,6 +39,7 @@ public class DamageReceiver : LoadAutoComponents
     public virtual void ReBorn()
     {
         this.hp = this.hpMax;
+        this.isDead = false;
     }
 
     public virtual void Add(float add)

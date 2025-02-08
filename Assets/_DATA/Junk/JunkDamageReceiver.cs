@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JunkDamageReceiver : DamageReceiver
 {
+
+    [Header("==> Junk <==")]
     [SerializeField] protected JunkCtrl junkCtrl;
 
     protected override void LoadComponents()
@@ -21,5 +23,11 @@ public class JunkDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.junkCtrl.JunkDespawn.DespawnObj();
+    }
+
+    public override void ReBorn()
+    {
+        this.hpMax = this.junkCtrl.JunkSO.hpMax;
+        base.ReBorn();
     }
 }

@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 41528029}
   junkDespawn: {fileID: 937635398}
+  junkSO: {fileID: 11400000, guid: de1d038a0acd3a546b7d67a4ac439411, type: 2}
 --- !u!1 &1538740284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +1529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 810126771}
   junkDespawn: {fileID: 762618059}
+  junkSO: {fileID: 11400000, guid: 8cae80b47134ab746af2baea26388434, type: 2}
 --- !u!1 &1634886238
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,15 @@ public class JunkCtrl : LoadAutoComponents
     [SerializeField] protected JunkDespawn junkDespawn;
     public JunkDespawn JunkDespawn => junkDespawn;
 
+    [SerializeField] protected JunkSO  junkSO;
+    public JunkSO JunkSO => junkSO;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadJunkDespawn();
+        this.LoadJunkSO();
     }
 
     protected virtual void LoadModel()
@@ -27,5 +31,12 @@ public class JunkCtrl : LoadAutoComponents
     {
         if (junkDespawn != null) return;
         junkDespawn = GetComponentInChildren<JunkDespawn>();
+    }
+
+    protected virtual void LoadJunkSO()
+    {
+        if (junkSO != null) return;
+        string resPath = "Junk/" + transform.name; // transform.name =>> load dung scripttable obj giong ten obj trong hirachie
+        junkSO = Resources.Load<JunkSO>(resPath);
     }
 }
