@@ -16,7 +16,7 @@ public abstract class Despawn : LoadAutoComponents
         if (!CanDespawn()) return;
         this.DespawnObj();
     }
-    protected virtual void DespawnObj()
+    public virtual void DespawnObj()
     {
         Destroy(this.transform.parent.gameObject);
     }

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CircleCollider2D))]
 public class DamageReceiver : LoadAutoComponents
 {
     [SerializeField] protected float hp;
     [SerializeField] protected float hpMax;
+    [SerializeField] protected bool isDead;
 
+    [SerializeField] protected CircleCollider2D circleCollider;
     protected override void ResetValue()
     {
         base.ResetValue();
@@ -14,8 +17,20 @@ public class DamageReceiver : LoadAutoComponents
         this.hpMax = 10f;
     }
 
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadCircleCollider2D();
+    }
 
-    protected virtual void Start()
+    protected virtual void LoadCircleCollider2D()
+    {
+        if (circleCollider != null) return;
+        circleCollider = GetComponent<CircleCollider2D>();
+        circleCollider.radius = 0.25f;
+    }
+
+    protected virtual void OnEnable()
     {
         this.ReBorn();
     }
@@ -35,11 +50,23 @@ public class DamageReceiver : LoadAutoComponents
     {
         this.hp -= deduct;
         if (hp < 0) this.hp = 0;
+        CheckIsDead();
     }
 
-    protected virtual bool isDead()
+    protected virtual bool IsDead()
     {
         return this.hp <= 0; // return true neu hp< 0
     }
 
+    protected virtual void CheckIsDead()
+    {
+        if (!IsDead()) return;
+        isDead = true;
+        this.OnDead();
+    }
+
+    protected virtual void OnDead()
+    {
+        //for overide
+    }
 }

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class JunkDespawn : DespawnByDistance
 {
+    private void OnEnable()
+    {
+        this.distance = 0f;
+    }
 
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.disLimit = 20f;
+        this.disLimit = 50f;
     }
 
-    protected override void DespawnObj()
+    public override void DespawnObj()
     {
         JunkSpawner.Instance.Despawn(this.transform.parent);
     }
