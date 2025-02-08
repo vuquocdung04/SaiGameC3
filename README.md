@@ -51,3 +51,4 @@
 		- JunkSpawner: là đại diện spawner cho vũ trụ Junk =))
 		- Thì từ giờ các JunkSpawnerCtrl, JunkSpawnerRamdom, JunkSpawnerPoints nếu cần sẽ gọi tới thằng JunkSpawner thay vì gọi trực tiếp tới Spawner
 		- 👉 Hiểu đơn giản: JunkSpawner: Chính là Bản sao của Spawner ( thật ra là con của nó)
+	- E25: thay vì truyền string để ramdom junk => dùng chính số thứ tự trong list để gọi
