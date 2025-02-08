@@ -6,7 +6,7 @@ public class InputManager : Singleton<InputManager>
 {
 
     [SerializeField] public Vector3 mouseWorldPos;
-    [SerializeField] public float onFiring;
+    [SerializeField] public bool onFiring;
     private void Update()
     {
         this.GetMouseDown();
@@ -19,7 +19,7 @@ public class InputManager : Singleton<InputManager>
 
     protected virtual void GetMouseDown()
     {
-        this.onFiring = Input.GetAxis("Fire1");
+        this.onFiring = Input.GetMouseButton(0);
     }
     protected virtual void GetMousePos()
     {

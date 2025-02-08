@@ -10,6 +10,9 @@ public class BulletCtrl : LoadAutoComponents
     [SerializeField] protected BulletDespawn bulletDespawn;
     public BulletDespawn BulletDespawn => bulletDespawn;
 
+    [SerializeField] protected Transform shooter;
+    public Transform Shooter => shooter;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -27,5 +30,10 @@ public class BulletCtrl : LoadAutoComponents
     {
         if (bulletDespawn != null) return;
         bulletDespawn = GetComponentInChildren<BulletDespawn>();
+    }
+
+    public virtual void SetShooter(Transform shooter)
+    {
+        this.shooter = shooter;
     }
 }
