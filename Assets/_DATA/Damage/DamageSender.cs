@@ -18,7 +18,7 @@ public class DamageSender : LoadAutoComponents
 
         if (damageReceiver == null) return;
         this.Send(damageReceiver);
-
+        
         this.CreateFXImpact();
     }
 

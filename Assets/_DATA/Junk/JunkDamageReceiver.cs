@@ -27,19 +27,19 @@ public class JunkDamageReceiver : DamageReceiver
         this.junkCtrl.JunkDespawn.DespawnObj();
 
     }
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName,transform.position,Quaternion.identity);
+        fxOnDead.gameObject.SetActive(true);
+    }
+
     protected virtual void DropOnDead()
     {
         Vector3 pos = this.transform.position;
         Quaternion rot = this.transform.rotation;
         ItemDropSpawner.Instance.Drop(this.junkCtrl.JunkSO.dropList, pos,rot);
 
-    }
-
-    protected virtual void OnDeadFX()
-    {
-        string fxName = this.GetOnDeadFXName();
-        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName,transform.position,Quaternion.identity);
-        fxOnDead.gameObject.SetActive(true);
     }
 
     protected virtual string GetOnDeadFXName()

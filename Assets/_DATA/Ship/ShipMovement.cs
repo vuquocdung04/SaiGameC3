@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMovement : MonoBehaviour
+public class ShipMovement : ShipAbstract
 {
+    [Space(10)]
+    [Header("ShipMovement")]
     [SerializeField] protected Vector3 targetPos;
     [SerializeField] protected float speed = 0.1f;
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         this.GetTargetPos();

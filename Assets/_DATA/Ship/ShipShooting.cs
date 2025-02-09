@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShooting : LoadAutoComponents
+public class ShipShooting : ShipAbstract
 {
+    [Space(10)]
+    [Header("ShipShooting")]
     [SerializeField] protected bool isShootting;
 
-    [SerializeField] protected float shootDelay = 1f;
+    [SerializeField] protected float shootDelay = 0.4f;
     [SerializeField] protected float shootTimer = 0f;
     private void Update()
     {
