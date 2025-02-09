@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62bce7fe50e79741bd38edd75664284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  junkCtrl: {fileID: 53247222}
   _circleCollider2D: {fileID: 186642046}
 --- !u!58 &186642046
 CircleCollider2D:
@@ -1742,13 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSlot: 70
-  items:
-  - itemProfile: {fileID: 11400000, guid: 9b4e8f503cb6c8245ab33bfaaa2eb5e9, type: 2}
-    itemCount: 2
-    maxStack: 7
-  - itemProfile: {fileID: 11400000, guid: 8b5829afa63e5fb4794ef43c275334a8, type: 2}
-    itemCount: 1
-    maxStack: 7
+  items: []
 --- !u!1 &1256217325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,8 +2936,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079164401}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.861, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2960,6 +2955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62bce7fe50e79741bd38edd75664284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  junkCtrl: {fileID: 1342532551}
   _circleCollider2D: {fileID: 2079164404}
 --- !u!58 &2079164404
 CircleCollider2D:
