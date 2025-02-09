@@ -73,8 +73,10 @@
 		- ItemCode: quản lí enum tên item rơi
 		- ItemProfileSO: quản lí ItemType, ItemCode, là SO để cho vào JunkSO(quản lí rate rơi)
 		- ItemInventory: quản lí ItenProfileSO + số lượng item hiện tại + số lượng nhặt max
-		- Inventory: Quản lí list ItemInventory, quản lí bool check va chạm để thêm item
+		- Inventory: Quản lí
+			- List ItemInventory
+			- Thêm, xóa,... item
 		- ItemPickupable: Quản lí sự va chạm bản thân item so với vật thể khác như: player hoặc chuột
 		- ItemLooter: Quản lí va chạm của vật thể(player) để nhặt
-
+	- 📝E41: **Script Inventory** đọc kĩ sau học lại
 

@@ -10,8 +10,8 @@ public class JunkFly : ParentFly
     {
         base.ResetValue();
         this.speed = 0.5f;
-        this.minCam = -17;
-        this.maxCam = 17;
+        this.minCam = -10;
+        this.maxCam = 10;
     }
 
     protected virtual void OnEnable()
