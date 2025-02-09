@@ -2,6 +2,8 @@
 using System;
 
 [Serializable]
+
+// hieu la struct cung duoc
 public class ItemInventory 
 {
     public ItemProfileSO itemProfile;

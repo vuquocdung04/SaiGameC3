@@ -16,9 +16,9 @@ public class JunkSpawnerRandom : LoadAutoComponents
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.ramdomDelay = 1f;
+        this.ramdomDelay = 0.5f;
         this.ramdomTimer = 0f;
-        this.ramdomLimit = 9f;
+        this.ramdomLimit = 20f;
     }
 
     protected override void LoadComponents()

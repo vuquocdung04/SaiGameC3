@@ -8,4 +8,10 @@ public class ItemDespawn : DespawnByDistance
     {
         ItemDropSpawner.Instance.Despawn(transform.parent);
     }
+
+    protected override void ResetValue()
+    {
+        base.ResetValue();
+        this.disLimit = 70f;
+    }
 }
