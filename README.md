@@ -64,7 +64,7 @@
 		- tên các enum == tên gameobj ở hirachie thì nó mới spawn được
 		- vì ở script Spawn method: GetPrefabname nó load các thằng con đồng thời lấy chính tên của cno luôn
 ## ☀️9/2:
-- E34 -> 
+- E34 -> E41:
 	- 🟢 +1 Fact:
 		- Gọi chung Collider thì không chọc được vào radius, etc..
 		- 👉 Gọi cụ thể như: BoxCollider, CircleCollider,....
@@ -79,4 +79,6 @@
 		- ItemPickupable: Quản lí sự va chạm bản thân item so với vật thể khác như: player hoặc chuột
 		- ItemLooter: Quản lí va chạm của vật thể(player) để nhặt
 	- 📝E41: **Script Inventory** đọc kĩ sau học lại
+## ☀️10/2:
+- E42 ->
 

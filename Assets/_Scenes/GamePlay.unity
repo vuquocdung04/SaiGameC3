@@ -1129,8 +1129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab3210d1e44d604c9badad771936638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipCtrl: {fileID: 1091335914}
   isShootting: 0
-  shootDelay: 0.1
+  shootDelay: 0.4
   shootTimer: 0
 --- !u!1 &567647667
 GameObject:
@@ -2070,6 +2071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1149047875}
+  shipMovement: {fileID: 1754125051}
+  shipShooting: {fileID: 533728651}
 --- !u!1 &1149047873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d331d731a7ef740ab7fe9f19aaaca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSlot: 70
+  maxSlot: 7
   items: []
 --- !u!1 &1256217325
 GameObject:
@@ -3142,8 +3145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd1dc5e5f9e7740a40ed456a04580e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipCtrl: {fileID: 1091335914}
   targetPos: {x: 0, y: 0, z: 0}
-  speed: 0.02
+  speed: 0.1
 --- !u!1 &1785062977
 GameObject:
   m_ObjectHideFlags: 0
