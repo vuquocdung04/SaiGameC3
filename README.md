@@ -66,5 +66,14 @@
 		- vì ở script Spawn method: GetPrefabname nó load các thằng con đồng thời lấy chính tên của cno luôn
 ## ☀️9/2:
 - E34 -> 
-
-		
+	- 🟢 +1 Fact:
+		- Gọi chung Collider thì không chọc được vào radius, etc..
+		- 👉 Gọi cụ thể như: BoxCollider, CircleCollider,....
+	- 🟢E35: cấu trúc nhặt item và inventory (**SO** là scriptableObj)
+		- ItemType: quản lí enum được phép: gộp hoặc equiment,..
+		- ItemCode: quản lí enum tên item rơi
+		- ItemProfileSO: quản lí ItemType, ItemCode
+		- ItemInventory: quản lí ItenProfileSO + số lượng item hiện tại + số lượng nhặt max
+		- Inventory: Quản lí list ItemInventory
+		- ItemPickupable: Quản lí va chạm của item
+		- ItemLooter: Quản lí va chạm của vật thể(player) để nhặt

@@ -36,25 +36,25 @@ public class BulletImpart : BulletAbstract
     }
 
 
-    protected virtual void CreateFXImpact(Collider2D collision)
-    {
-        string fxName = this.GetImpactFxName();
-        Quaternion rot = Quaternion.Euler(0,0,-90);
-        Transform fxImpact = FXSpawner.Instance.Spawn(fxName, this.transform.position,transform.rotation * rot);
-        fxImpact.gameObject.SetActive(true);
-    }
+    //protected virtual void CreateFXImpact(Collider2D collision)
+    //{
+    //    string fxName = this.GetImpactFxName();
+    //    Quaternion rot = Quaternion.Euler(0,0,-90);
+    //    Transform fxImpact = FXSpawner.Instance.Spawn(fxName, this.transform.position,transform.rotation * rot);
+    //    fxImpact.gameObject.SetActive(true);
+    //}
 
-    protected string GetImpactFxName()
-    {
-        return FXSpawner.impact1;
-    }
+    //protected string GetImpactFxName()
+    //{
+    //    return FXSpawner.impact1;
+    //}
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         this.bulletCtrl.DamageSender.Send(collision.transform);
 
         if (collision.transform.parent == this.bulletCtrl.Shooter) return;
 
-        this.CreateFXImpact(collision);
+        //this.CreateFXImpact(collision);
     }
 
 
