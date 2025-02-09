@@ -7,16 +7,17 @@ public class Inventory : LoadAutoComponents
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
 
-    private void Start()
-    {
-        this.AddItem(ItemCode.IronOre,4);
-    }
 
+    // Additem 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
     {
         ItemInventory itemInventory = this.GetItemByCode(itemCode);
         int newCount = itemInventory.itemCount + addCount;
-        if (newCount > itemInventory.maxStack) return false;
+        if (newCount > itemInventory.maxStack)
+        {
+            Debug.LogError("Full pack");
+            return false;
+        }
 
         itemInventory.itemCount = newCount;
         return true;
@@ -25,7 +26,7 @@ public class Inventory : LoadAutoComponents
 
     public virtual ItemInventory GetItemByCode(ItemCode itemCode)
     {
-        ItemInventory itemInventory = this.items.Find((x) => x.itemProfile);
+        ItemInventory itemInventory = this.items.Find((item) => item.itemProfile.itemCode == itemCode);
         if (itemInventory == null) itemInventory = this.AddEmptyProfile(itemCode);
         return itemInventory;
     }

@@ -11,6 +11,7 @@ public class ItemLooter : LoadAutoComponents
     [SerializeField] protected Collider2D _collider2D;
     [SerializeField] protected Rigidbody2D _rigidbody2D;
 
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -38,10 +39,18 @@ public class ItemLooter : LoadAutoComponents
         _rigidbody2D.gravityScale = 0f;
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ItemPickupable itemPickupable = collision.GetComponent<ItemPickupable>();
         if (itemPickupable == null) return;
-        Debug.LogError("real pick");
+
+        ItemCode itemCode = itemPickupable.GetItemCode(); // GetItemCode de chuyen string = enum. String o hirachie = ten enum
+
+        // neu xay ra va cham thi => dua itemPickup vao pool
+        if (this.inventory.AddItem(itemCode,1))
+        {
+            itemPickupable.Picked();
+        }
     }
 }
