@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class ItemPickupable : JunkAbstract
+public class ItemPickupable : ItemAbstract
 {
     [SerializeField] protected CircleCollider2D _circleCollider2D;
+
     public static ItemCode String2ItemCode(string itemName)
     {
         return (ItemCode)System.Enum.Parse(typeof(ItemCode), itemName);
     }
+
+    public virtual void OnMouseDown()
+    {
+        PlayerCtrl.Instance.PlayerPickup.ItemPickup(this);
+    }
+
 
     protected override void LoadComponents()
     {
@@ -33,6 +40,6 @@ public class ItemPickupable : JunkAbstract
     // pool item
     public virtual void Picked()
     {
-        this.junkCtrl.JunkDespawn.DespawnObj();
+        this.itemCtrl.ItemDespawn.DespawnObj();
     }
 }

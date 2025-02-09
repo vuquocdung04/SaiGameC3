@@ -58,8 +58,7 @@
 		-  👉 dùng AddressAble Tải asset động, tối ưu RAM, hỗ trợ cập nhật online
 	- 🟢E32: cơ bản rơi vật phẩm
 		- **ItemCode**: quản lí enum tên item rơi
-		- **ItemSO**: là scriptableobj quản lí enum(Itemcode)
-		- **DropRate**: quản lí ItemSO, tỉ lệ rơi đồ
+		- **DropRate**: quản lí ItemProfileSO, tỉ lệ rơi đồ
 		- **ItemDropSpawner**: singleton, quản lí list DropRate 
 	- 🤔 cấu trúc code hơi dở vì:
 		- tên các enum == tên gameobj ở hirachie thì nó mới spawn được
@@ -72,8 +71,10 @@
 	- 🟢E35: cấu trúc nhặt item và inventory (**SO** là scriptableObj)
 		- ItemType: quản lí enum được phép: gộp hoặc equiment,..
 		- ItemCode: quản lí enum tên item rơi
-		- ItemProfileSO: quản lí ItemType, ItemCode
+		- ItemProfileSO: quản lí ItemType, ItemCode, là SO để cho vào JunkSO(quản lí rate rơi)
 		- ItemInventory: quản lí ItenProfileSO + số lượng item hiện tại + số lượng nhặt max
-		- Inventory: Quản lí list ItemInventory
-		- ItemPickupable: Quản lí va chạm của item
+		- Inventory: Quản lí list ItemInventory, quản lí bool check va chạm để thêm item
+		- ItemPickupable: Quản lí sự va chạm bản thân item so với vật thể khác như: player hoặc chuột
 		- ItemLooter: Quản lí va chạm của vật thể(player) để nhặt
+
+
