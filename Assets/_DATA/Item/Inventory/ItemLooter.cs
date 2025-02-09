@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class ItemLooter : LoadAutoComponents
+public class ItemLooter : InventoryAbstract
 {
-    [SerializeField] protected Inventory inventory;
+    [Space(10)]
+    [Header("ItemLooter")]
     [SerializeField] protected Collider2D _collider2D;
     [SerializeField] protected Rigidbody2D _rigidbody2D;
 
@@ -15,16 +16,10 @@ public class ItemLooter : LoadAutoComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadInventory();
         this.LoadCollider2D();
         this.LoadRigidbody2D();
     }
 
-    protected virtual void LoadInventory()
-    {
-        if (inventory != null) return;
-        inventory = GetComponentInParent<Inventory>();
-    }
     protected virtual void LoadCollider2D()
     {
         if(_collider2D != null) return;
