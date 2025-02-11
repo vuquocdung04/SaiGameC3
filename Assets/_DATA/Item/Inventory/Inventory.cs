@@ -63,6 +63,24 @@ public class Inventory : LoadAutoComponents
         return true;
     }
 
+    public virtual bool AddItem(ItemInventory itemInventory)
+    {
+
+        int addCount = itemInventory.itemCount;
+        ItemProfileSO itemProfileSO = itemInventory.itemProfile;
+        ItemCode itemCode = itemProfileSO.itemCode;
+        ItemType itemType = itemProfileSO.itemType;
+        if (itemType == ItemType.Equiment) return this.AddEquiment(itemInventory);
+
+        return this.AddItem(itemCode,addCount);
+    }
+
+    public virtual bool AddEquiment(ItemInventory itemInventory)
+    {
+        if (this.IsInventoryFull()) return false;
+        this.items.Add(itemInventory);
+        return true;
+    }
     protected virtual bool IsInventoryFull()
     {
         if (this.items.Count >= this.maxSlot) return true;
@@ -168,9 +186,18 @@ public class Inventory : LoadAutoComponents
             }
             itemInventory.itemCount -= deduct;
         }
+        this.ClearEmptySlot();
 
     }
-
+    protected virtual void ClearEmptySlot()
+    {
+        ItemInventory itemInventory;
+        for (int i = 0; i < this.items.Count;i++)
+        {
+            itemInventory = this.items[i];
+            if(itemInventory.itemCount == 0) this.items.RemoveAt(i);
+        }
+    }
 
 
 

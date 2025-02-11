@@ -80,5 +80,9 @@
 		- ItemLooter: Quản lí va chạm của vật thể(player) để nhặt
 	- 📝E41: **Script Inventory** đọc kĩ sau học lại
 ## ☀️10/2:
-- E42 ->
+- E42 -> E44:
+	- 🟢Liên kết code bằng oop rối quá, quá nhiều ràng buộc ở inventory
+## ☀️11/2:
+- E45 ->
+	
 

@@ -10,6 +10,9 @@ public class ItemCtrl : LoadAutoComponents
     [SerializeField] protected ItemDespawn itemDespawn;
     public ItemDespawn ItemDespawn => itemDespawn;
 
+    [SerializeField] protected ItemInventory itemInventory;
+    public ItemInventory ItemInventory => itemInventory;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -29,4 +32,8 @@ public class ItemCtrl : LoadAutoComponents
         itemDespawn = GetComponentInChildren<ItemDespawn>();
     }
 
+    public virtual void SetItemInventory(ItemInventory itemInventory)
+    {
+        this.itemInventory = itemInventory;
+    }
 }

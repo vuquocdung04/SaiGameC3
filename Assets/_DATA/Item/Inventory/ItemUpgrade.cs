@@ -12,6 +12,7 @@ public class ItemUpgrade : InventoryAbstract
     private void Start()
     {
         Invoke(nameof(Test),2);
+        Invoke(nameof(Test),2);
     }
 
     protected virtual void Test()

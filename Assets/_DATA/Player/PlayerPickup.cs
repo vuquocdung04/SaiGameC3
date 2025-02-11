@@ -9,7 +9,8 @@ public class PlayerPickup : PlayerAbstract
     public virtual void ItemPickup(ItemPickupable itemPickupable)
     {
         ItemCode itemCode = itemPickupable.GetItemCode();
-        if (this.playerCtrl.ShipCtrl.Inventory.AddItem(itemCode,1))
+        ItemInventory itemInventory = itemPickupable.ItemCtrl.ItemInventory;
+        if (this.playerCtrl.ShipCtrl.Inventory.AddItem(itemInventory))
         {
             itemPickupable.Picked();
         }

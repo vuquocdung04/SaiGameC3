@@ -40,10 +40,9 @@ public class ItemLooter : InventoryAbstract
         ItemPickupable itemPickupable = collision.GetComponent<ItemPickupable>();
         if (itemPickupable == null) return;
 
-        ItemCode itemCode = itemPickupable.GetItemCode(); // GetItemCode de chuyen string = enum. String o hirachie = ten enum
-
+        ItemInventory itemInventory = itemPickupable.ItemCtrl.ItemInventory;
         // neu xay ra va cham thi => dua itemPickup vao pool
-        if (this.inventory.AddItem(itemCode,1))
+        if (this.inventory.AddItem(itemInventory))
         {
             itemPickupable.Picked();
         }
