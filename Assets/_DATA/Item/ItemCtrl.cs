@@ -21,6 +21,11 @@ public class ItemCtrl : LoadAutoComponents
         this.LoadItemInventory();
     }
 
+    private void OnDisable()
+    {
+        this.ResetItem();
+    }
+
     protected virtual void LoadModel()
     {
         if (model != null) return;
@@ -35,7 +40,7 @@ public class ItemCtrl : LoadAutoComponents
 
     public virtual void SetItemInventory(ItemInventory itemInventory)
     {
-        this.itemInventory = itemInventory;
+        this.itemInventory = itemInventory.Clone();
     }
 
     protected virtual void LoadItemInventory()
@@ -44,7 +49,13 @@ public class ItemCtrl : LoadAutoComponents
         ItemCode itemCode = ItemCodeParser.FromString(transform.name);
         ItemProfileSO itemProfile = ItemProfileSO.FindByItemCode(itemCode);
         this.itemInventory.itemProfile = itemProfile;
-        this.itemInventory.itemCount = 1;
+        this.ResetItem();
 
+    }
+
+    protected virtual void ResetItem()
+    {
+        this.itemInventory.itemCount = 1;
+        this.itemInventory.upgradeLevel = 0;
     }
 }
