@@ -11,17 +11,18 @@ public class InventoryDrop : InventoryAbstract
     }
     protected virtual void Test()
     {
-        this.DropItemIndex(0);
+        Vector3 dropPos = transform.position;
+        dropPos.x += 1;
+        this.DropItemIndex(0, dropPos, Quaternion.identity);
     }
 
-    protected virtual void DropItemIndex(int itemIndex)
+    protected virtual void DropItemIndex(int itemIndex, Vector3 dropPos, Quaternion dropRot)
     {
         ItemInventory itemInventory = this.inventory.Items[itemIndex];
         Debug.LogError(itemInventory.upgradeLevel);
 
-        Vector3 dropPos = transform.position;
-        dropPos.x += 1;
-        ItemDropSpawner.Instance.Drop(itemInventory,dropPos,Quaternion.identity);
+
+        ItemDropSpawner.Instance.Drop(itemInventory,dropPos, dropRot);
         this.inventory.Items.Remove(itemInventory);
     }
 }

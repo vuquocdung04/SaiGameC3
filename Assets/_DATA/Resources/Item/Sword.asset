@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16ca1bfb26196d4cad9e1f9e9756ae6, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  itemCode: 4
+  itemCode: 1000
   itemType: 2
   itemName: name
   defaultMaxStack: 1

@@ -366,6 +366,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1426890649}
   itemDespawn: {fileID: 392612070}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: 24d449086c67ad246aeea368b9948ef8, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &57559256
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +961,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1698282955}
   itemDespawn: {fileID: 1967788708}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: 8592bb5984192334586d988714bde65e, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &355896475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2831,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1070339512}
   itemDespawn: {fileID: 1880346552}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: 0f75a1ba2488db04e98cbce1be694f64, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &1347063488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,6 +4293,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1580482868}
   itemDespawn: {fileID: 1943141160}
+  itemInventory:
+    itemProfile: {fileID: 11400000, guid: db4b5d2174b90fb4bad42b82b6ffcb6d, type: 2}
+    itemCount: 1
+    maxStack: 7
+    upgradeLevel: 0
 --- !u!1 &2045832174
 GameObject:
   m_ObjectHideFlags: 0

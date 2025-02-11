@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCode: 1
   itemType: 1
-  itemName: name
+  itemName: IronOre
   defaultMaxStack: 7
+  upgradeLevels: []
