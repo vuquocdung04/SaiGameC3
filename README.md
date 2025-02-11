@@ -83,6 +83,11 @@
 - E42 -> E44:
 	- 🟢Liên kết code bằng oop rối quá, quá nhiều ràng buộc ở inventory
 ## ☀️11/2:
-- E45 ->
-	
+- E45 -> E48:
+	- 🟢Nay biết thêm 1 _**Fact**_ mới:
+		- thêm được icon vào textMeshPro bằng cách:
+			- Bấm vào ảnh: Create Sprite Asset
+			- Chỉnh ở TMP(tìm trong ô tìm kiếm ở project)
+			- Gọi lệnh <sprite name="Name"> (Name = tên ảnh)
+		- 👉 Làm như vậy sẽ không lo coin(ví dụ) tràn đè lên cả icon
 
