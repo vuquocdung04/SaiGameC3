@@ -88,6 +88,6 @@
 		- thêm được icon vào textMeshPro bằng cách:
 			- Bấm vào ảnh: Create Sprite Asset
 			- Chỉnh ở TMP(tìm trong ô tìm kiếm ở project)
-			- Gọi lệnh <sprite name="Name"> (Name = tên ảnh)
+			- Gọi lệnh "_<sprite name="Name">_" (Name = tên ảnh)
 		- 👉 Làm như vậy sẽ không lo coin(ví dụ) tràn đè lên cả icon
 
