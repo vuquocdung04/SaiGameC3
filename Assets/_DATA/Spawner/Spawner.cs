@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
+public abstract class Spawner :LoadAutoComponents
 {
+
     [SerializeField] protected Transform holders;
     [SerializeField] protected int spawnedCount = 0;
     public int SpawnedCount => spawnedCount;
@@ -11,8 +12,6 @@ public abstract class Spawner<T> : Singleton<T> where T :LoadAutoComponents
     [Space(10)]
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
-
-
     protected override void LoadComponents()
     {
         base.LoadComponents();

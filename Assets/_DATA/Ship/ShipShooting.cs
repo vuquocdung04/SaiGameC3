@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShooting : LoadAutoComponents
+public abstract class ShipShooting : LoadAutoComponents
 {
     [Space(10)]
     [Header("ShipShooting")]
@@ -38,9 +38,5 @@ public class ShipShooting : LoadAutoComponents
         newBullet.gameObject.SetActive(true);
     }
 
-    protected virtual bool IsShooting()
-    {
-        this.isShootting = InputManager.Instance.onFiring;
-        return isShootting;
-    }
+    protected abstract bool IsShooting();
 }
