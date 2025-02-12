@@ -181,7 +181,7 @@ TextureImporter:
         width: 31
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,6 +189,27 @@ TextureImporter:
       bones: []
       spriteID: 2928597e1fdb06f4aa42cb6e3f765361
       internalID: 979773186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CelestialObjects_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 33
+        width: 128
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475dbab119122f44c9d7aab7baa99b13
+      internalID: -1086929886
       vertices: []
       indices: 
       edges: []
@@ -208,6 +229,7 @@ TextureImporter:
       CelestialObjects_1: 848323246
       CelestialObjects_2: -917285179
       CelestialObjects_3: 979773186
+      CelestialObjects_4: -1086929886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
