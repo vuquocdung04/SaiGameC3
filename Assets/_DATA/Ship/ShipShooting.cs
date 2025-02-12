@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShooting : ShipAbstract
+public class ShipShooting : LoadAutoComponents
 {
     [Space(10)]
     [Header("ShipShooting")]

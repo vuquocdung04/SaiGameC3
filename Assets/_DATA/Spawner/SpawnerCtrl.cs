@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkSpawnerCtrl : LoadAutoComponents
+public class SpawnerCtrl : LoadAutoComponents
 {
-    [SerializeField] protected JunkSpawner junkSpawner;
-    public JunkSpawner JunkSpawner => junkSpawner;
-
+    [SerializeField] protected EnemySpawner spawner;
+    public EnemySpawner Spawner => spawner;
 
     [SerializeField] protected SpawnPoints spawnPoints;
     public SpawnPoints SpawnPoints => spawnPoints;
@@ -14,14 +13,16 @@ public class JunkSpawnerCtrl : LoadAutoComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkSpawner();
+        this.LoadSpawner();
         this.LoadSpawnPoints();
     }
-    protected virtual void LoadJunkSpawner()
+
+    protected virtual void LoadSpawner()
     {
-        if (junkSpawner != null) return;
-        junkSpawner = GetComponent<JunkSpawner>();
+        if (spawner != null) return;
+        spawner = GetComponent<EnemySpawner>();
     }
+
     protected virtual void LoadSpawnPoints()
     {
         if (spawnPoints != null) return;
