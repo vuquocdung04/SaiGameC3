@@ -10,8 +10,8 @@ public class JunkCtrl : LoadAutoComponents
     [SerializeField] protected JunkDespawn junkDespawn;
     public JunkDespawn JunkDespawn => junkDespawn;
 
-    [SerializeField] protected JunkSO  junkSO;
-    public JunkSO JunkSO => junkSO;
+    [SerializeField] protected ShootableObject  shootableObject;
+    public ShootableObject ShootableObject => shootableObject;
 
     protected override void LoadComponents()
     {
@@ -35,8 +35,8 @@ public class JunkCtrl : LoadAutoComponents
 
     protected virtual void LoadJunkSO()
     {
-        if (junkSO != null) return;
-        string resPath = "Junk/" + transform.name; // transform.name =>> load dung scripttable obj giong ten obj trong hirachie
-        junkSO = Resources.Load<JunkSO>(resPath);
+        if (shootableObject != null) return;
+        string resPath = "ShootableObject/Junk/" + transform.name; // transform.name =>> load dung scripttable obj giong ten obj trong hirachie
+        shootableObject = Resources.Load<ShootableObject>(resPath);
     }
 }

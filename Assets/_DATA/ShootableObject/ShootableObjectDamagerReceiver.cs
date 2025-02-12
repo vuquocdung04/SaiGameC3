@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkDamageReceiver : DamageReceiver
+public class ShootableObjectDamagerReceiver : DamageReceiver
 {
 
-    [Header("==> Junk <==")]
-    [SerializeField] protected JunkCtrl junkCtrl;
+    [Header("==> ShootableObjectDamagerReceiver <==")]
+    [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkCtrl();
+        this.LoadCtrl();
     }
 
-    protected virtual void LoadJunkCtrl()
+    protected virtual void LoadCtrl()
     {
-        if (junkCtrl != null) return;
-        junkCtrl = GetComponentInParent<JunkCtrl>();
+        if (shootableObjectCtrl != null) return;
+        shootableObjectCtrl = GetComponentInParent<ShootableObjectCtrl>();
     }
 
     protected override void OnDead()
     {
         this.OnDeadFX();
         this.DropOnDead();
-        this.junkCtrl.JunkDespawn.DespawnObj();
+        this.shootableObjectCtrl.Despawn.DespawnObj();
 
     }
     protected virtual void OnDeadFX()
@@ -38,7 +38,7 @@ public class JunkDamageReceiver : DamageReceiver
     {
         Vector3 pos = this.transform.position;
         Quaternion rot = this.transform.rotation;
-        ItemDropSpawner.Instance.Drop(this.junkCtrl.ShootableObject.dropList, pos,rot);
+        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.ShootableObject.dropList, pos,rot);
 
     }
 
@@ -49,7 +49,7 @@ public class JunkDamageReceiver : DamageReceiver
 
     public override void ReBorn()
     {
-        this.hpMax = this.junkCtrl.ShootableObject.hpMax;
+        this.hpMax = this.shootableObjectCtrl.ShootableObject.hpMax;
         base.ReBorn();
     }
 }
