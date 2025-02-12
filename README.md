@@ -90,4 +90,6 @@
 			- Chỉnh ở TMP(tìm trong ô tìm kiếm ở project)
 			- Gọi lệnh _**<.sprite name="Name">**_ (Name = tên ảnh, bỏ dấu chấm trước sprite)
 		- 👉 Làm như vậy sẽ không lo coin(ví dụ) tràn đè lên cả icon
+## ☀️12/2:
+- E49 ->:
 
