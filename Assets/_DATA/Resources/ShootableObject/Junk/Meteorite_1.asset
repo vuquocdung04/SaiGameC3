@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objName: ShootableObject
   objType: 1
-  hpMax: 0
+  hpMax: 2
   dropList:
   - itemSO: {fileID: 11400000, guid: 24d449086c67ad246aeea368b9948ef8, type: 2}
     dropRate: 0

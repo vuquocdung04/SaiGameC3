@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkSpawnerRandom : LoadAutoComponents
+public class SpawnerRandom : LoadAutoComponents
 {
-    [SerializeField] protected JunkSpawnerCtrl junkSpawnerCtrl;
+    [Header("Spawner Ramdom")]
+    [SerializeField] protected SpawnerCtrl spawnerCtrl;
     [SerializeField] protected float ramdomDelay;
     [SerializeField] protected float ramdomTimer;
     [SerializeField] protected float ramdomLimit;
@@ -30,8 +31,8 @@ public class JunkSpawnerRandom : LoadAutoComponents
 
     protected virtual void LoadJunkSpawnerCtrl()
     {
-        if (junkSpawnerCtrl != null) return;
-        junkSpawnerCtrl = GetComponent<JunkSpawnerCtrl>();
+        if (spawnerCtrl != null) return;
+        spawnerCtrl = GetComponent<SpawnerCtrl>();
     }
 
 
@@ -42,19 +43,19 @@ public class JunkSpawnerRandom : LoadAutoComponents
         if (this.ramdomTimer < this.ramdomDelay) return;
         this.ramdomTimer = 0;
 
-        Transform ranPoint = this.junkSpawnerCtrl.SpawnPoints.GetRandom();
+        Transform ranPoint = this.spawnerCtrl.SpawnPoints.GetRandom();
         Vector3 pos = ranPoint.position;
         Quaternion rot = transform.rotation;
 
-        Transform prefab = this.junkSpawnerCtrl.JunkSpawner.RandomPrefab();
-        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(prefab, pos,rot);
+        Transform prefab = this.spawnerCtrl.Spawner.RandomPrefab();
+        Transform obj = this.spawnerCtrl.Spawner.Spawn(prefab, pos,rot);
 
         obj.gameObject.SetActive(true);
     } 
 
     protected virtual bool RamdomReachLimit()
     {
-        int currentJunk = this.junkSpawnerCtrl.JunkSpawner.SpawnedCount;
+        int currentJunk = this.spawnerCtrl.Spawner.SpawnedCount;
         return currentJunk >= this.ramdomLimit;
     }
 }

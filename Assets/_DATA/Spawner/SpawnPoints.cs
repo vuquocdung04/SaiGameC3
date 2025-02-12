@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SpawnPoints : LoadAutoComponents
+public class SpawnPoints : LoadAutoComponents
 {
     [SerializeField] protected List<Transform> points;
     protected override void LoadComponents()

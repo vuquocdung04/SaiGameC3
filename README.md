@@ -92,4 +92,11 @@
 		- 👉 Làm như vậy sẽ không lo coin(ví dụ) tràn đè lên cả icon
 ## ☀️12/2:
 - E49 ->:
-
+	- 🔴Vấn đề generic:
+		- Spawner<T> là generic singleton.
+		- EnemySpawner : Spawner<EnemySpawner>
+		- JunkSpawner : Spawner<JunkSpawner>
+		- SpawnerCtrl muốn dùng chung cho tất cả spawner.
+		- SpawnerRandom gọi SpawnerCtrl.
+	- 🔴SpawnerCtrl cần gọi Spawner<T> đúng kiểu nhưng lại không biết T là gì.
+	- 🔴Unity không cho phép serialize generic, nên không thể kéo Spawner<T> vào Editor.
