@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnerCtrl : LoadAutoComponents
 {
-    [SerializeField] protected EnemySpawner spawner;
-    public EnemySpawner Spawner => spawner;
+    [SerializeField] protected Spawner spawner;
+    public Spawner Spawner => spawner;
 
     [SerializeField] protected SpawnPoints spawnPoints;
     public SpawnPoints SpawnPoints => spawnPoints;
@@ -20,7 +20,7 @@ public class SpawnerCtrl : LoadAutoComponents
     protected virtual void LoadSpawner()
     {
         if (spawner != null) return;
-        spawner = GetComponent<EnemySpawner>();
+        spawner = GetComponent<Spawner>();
     }
 
     protected virtual void LoadSpawnPoints()
