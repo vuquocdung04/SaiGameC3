@@ -109,3 +109,6 @@
 			- speed, rotationSpeed là khác nhau
 		- 👉 thay vì tạo 3 script mới kế thừa từ **Script** chung đó rồi định nghĩa lại 2 thuộc tính: _speed_, _rotationSpeed_
 		- 👉 Thì tạo 1 script mới: định nghĩa lại các hàm public Speed, Rotation rồi cho vào Start => Khi game start thì thông số mới sẽ được chỉnh
+	- 🟢Toán tử ?. trong C# (Null-conditional Operator)
+		- 👉 Mục đích: Tránh lỗi _NullReferenceException_ khi gọi phương thức hoặc truy cập thuộc tính của biến có thể null.
+		- 🔹_Ví Dụ_: string name = player?.character?.name;
