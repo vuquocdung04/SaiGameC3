@@ -26,6 +26,7 @@ public class AbilitySummon : BaseAbility
 
         Transform minionPrefab = this.spawner.RandomPrefab();
         Transform minion = this.spawner.Spawn(minionPrefab, spawnPos.position, spawnPos.rotation);
+
         minion.gameObject.SetActive(true);
         this.Active();
 

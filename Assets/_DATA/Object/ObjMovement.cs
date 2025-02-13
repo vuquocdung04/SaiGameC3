@@ -13,18 +13,12 @@ public class ObjMovement : LoadAutoComponents
 
     protected virtual void FixedUpdate()
     {
-        this.LookAtTarget();
         this.Moving();
     }
-    protected virtual void LookAtTarget()
+    public virtual void SetSpeed(float speed)
     {
-        Vector3 diff = this.targetPos - this.transform.parent.position;
-        diff.Normalize();
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-
-        this.transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z);
+        this.speed = speed;
     }
-
     protected virtual void Moving()
     {
         this.distance = Vector3.Distance(transform.position, targetPos);

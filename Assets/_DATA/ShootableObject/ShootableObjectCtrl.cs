@@ -12,12 +12,24 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
 
     [SerializeField] protected ShootableObject shootableObject;
     public ShootableObject ShootableObject => shootableObject;
+
+    [SerializeField] protected ObjShooting shooting;
+    public ObjShooting ObjShooting => shooting;
+
+    [SerializeField] protected ObjMovement objMovement;
+    public ObjMovement ObjMovement => objMovement;
+
+    [SerializeField] protected ObjLookAtTarget objLookAtTarget;
+    public ObjLookAtTarget ObjLookAtTarget => objLookAtTarget;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadDespawn();
         this.LoadSO();
+        this.LoadObjShooting();
+        this.LoadObjMovement();
+        this.LoadObjLookAtTarget();
     }
 
     protected virtual void LoadModel()
@@ -39,5 +51,21 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
         shootableObject = Resources.Load<ShootableObject>(resPath);
     }
 
+    protected virtual void LoadObjShooting()
+    {
+        if (shooting != null) return;
+        shooting = GetComponentInChildren<ObjShooting>();
+    }
+
+    protected virtual void LoadObjMovement()
+    {
+        if (objMovement != null) return;
+        objMovement = GetComponentInChildren<ObjMovement>();
+    }
+    protected virtual void LoadObjLookAtTarget()
+    {
+        if (objLookAtTarget != null) return;
+        objLookAtTarget = GetComponentInChildren<ObjLookAtTarget>();
+    }
     protected abstract string GetObjectTypeName();
 }
