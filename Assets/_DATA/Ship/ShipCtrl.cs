@@ -7,11 +7,11 @@ public class ShipCtrl : LoadAutoComponents
     [SerializeField] protected Inventory inventory;
     public Inventory Inventory => inventory;
 
-    [SerializeField] protected ShipMovement shipMovement;
-    public ShipMovement ShipMovement => shipMovement;
+    [SerializeField] protected ObjMovement shipMovement;
+    public ObjMovement ShipMovement => shipMovement;
 
-    [SerializeField] protected ShipShooting shipShooting;
-    public ShipShooting ShipShooting => shipShooting;
+    [SerializeField] protected ObjShooting shipShooting;
+    public ObjShooting ShipShooting => shipShooting;
 
 
     protected override void LoadComponents()
@@ -31,12 +31,12 @@ public class ShipCtrl : LoadAutoComponents
     protected virtual void LoadShipMovement()
     {
         if (shipMovement != null) return;
-        shipMovement = GetComponentInChildren<ShipMovement>();
+        shipMovement = GetComponentInChildren<ObjMovement>();
     }
 
     protected virtual void LoadShipShooting()
     {
         if(shipShooting != null) return;
-        shipShooting = GetComponentInChildren<ShipShooting>();
+        shipShooting = GetComponentInChildren<ObjShooting>();
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMovement : LoadAutoComponents
+public class ObjMovement : LoadAutoComponents
 {
     [Space(10)]
     [Header("ShipMovement")]
