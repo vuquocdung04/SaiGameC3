@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCode: 3
   itemType: 1
-  itemName: name
+  itemName: Ruby Ore
   defaultMaxStack: 7
+  upgradeLevels: []
