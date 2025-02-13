@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Inventory : LoadAutoComponents
 {
+    [Header("Inventory")]
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> items;
 
