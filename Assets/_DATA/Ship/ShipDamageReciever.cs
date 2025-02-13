@@ -6,6 +6,6 @@ public class ShipDamageReciever : DamageReceiver
 {
     protected override void OnDead()
     {
-        throw new System.NotImplementedException();
+        Debug.LogError("player dead");
     }
 }
