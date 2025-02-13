@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShipShootingByDistance : ShipShooting
+public class ShipShootingByDistance : ObjShooting
 {
     [Header("Shoot By Distance")]
     [SerializeField] protected Transform target;
