@@ -23,4 +23,8 @@ public class LoadAutoComponents : MonoBehaviour
     {
 
     }
+    protected virtual void OnEnable()
+    {
+
+    }
 }

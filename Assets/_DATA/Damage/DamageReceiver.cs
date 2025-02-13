@@ -31,7 +31,7 @@ public abstract class DamageReceiver : LoadAutoComponents
         circleCollider.radius = 0.25f;
     }
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
         this.ReBorn();
     }

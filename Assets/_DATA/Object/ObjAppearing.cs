@@ -37,7 +37,7 @@ public abstract class ObjAppearing : LoadAutoComponents
 
     protected virtual void OnAppearStart()
     {
-        foreach(ObjAppearObserver observer in observers)
+        foreach(ObjAppearObserver observer in this.observers)
         {
             observer.OnAppearStart();
         }

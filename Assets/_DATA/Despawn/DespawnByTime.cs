@@ -7,7 +7,7 @@ public class DespawnByTime : Despawn
     [SerializeField] protected float delay;
     [SerializeField] protected float timer;
 
-    void OnEnable()
+    protected override void OnEnable()
     {
         this.ResetTimer();
     }

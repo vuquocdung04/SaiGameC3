@@ -18,8 +18,8 @@ public class AbilitySummon : BaseAbility
         if (!isRead) return;
         this.Summon();
     }
-
-    protected virtual void Summon()
+    //spawn enemy
+    protected virtual Transform Summon()
     {
         Transform spawnPos = this.abilities.AbilitiObjectCtrl.SpawnPoints.GetRandom();
 
@@ -29,6 +29,8 @@ public class AbilitySummon : BaseAbility
 
         minion.gameObject.SetActive(true);
         this.Active();
+
+        return minion;
 
     }
 }

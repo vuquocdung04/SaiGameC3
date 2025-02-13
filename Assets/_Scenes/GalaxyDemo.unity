@@ -239,6 +239,8 @@ MonoBehaviour:
   despawn: {fileID: 784763735}
   shootableObject: {fileID: 11400000, guid: 1b0bd9155ff77bb42b0a917f4c5f61b8, type: 2}
   shooting: {fileID: 311925468}
+  objMovement: {fileID: 1650691464}
+  objLookAtTarget: {fileID: 2067458469}
   spawnPoints: {fileID: 132984376}
 --- !u!4 &45347480
 Transform:
@@ -628,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0, z: 0}
-  speed: 0.001
+  speed: 0.1
   distance: 1
   minDistance: 1
   target: {fileID: 1586592954}
@@ -1224,6 +1226,8 @@ MonoBehaviour:
   delay: 2
   isRead: 0
   spawner: {fileID: 210888388}
+  minions: []
+  minionLimit: 2
 --- !u!1 &392612068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShootting: 0
-  shootDelay: 0.4
+  shootDelay: 0.2
   shootTimer: 0
 --- !u!1 &567647667
 GameObject:
@@ -2597,6 +2601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854634756}
   - component: {fileID: 854634755}
+  - component: {fileID: 854634757}
   m_Layer: 0
   m_Name: MotherShip_1
   m_TagString: Untagged
@@ -2620,6 +2625,8 @@ MonoBehaviour:
   despawn: {fileID: 2045221042}
   shootableObject: {fileID: 11400000, guid: c9207205f765a84448542f97b95bdebc, type: 2}
   shooting: {fileID: 1588575003}
+  objMovement: {fileID: 110723319}
+  objLookAtTarget: {fileID: 477823079}
   spawnPoints: {fileID: 883960359}
 --- !u!4 &854634756
 Transform:
@@ -2644,6 +2651,21 @@ Transform:
   - {fileID: 1169984229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854634757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854634754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6175c50b1989de4699498b34fbb1b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootableObjectCtrl: {fileID: 854634755}
+  speed: 0.005
+  rotSpeed: 0.01
 --- !u!1 &883960357
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,7 +4644,7 @@ Transform:
   m_GameObject: {fileID: 1629710827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4836,9 +4858,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0, z: 0}
-  speed: 0.05
+  speed: 0.1
   distance: 1
-  minDistance: 1
+  minDistance: 0.5
   target: {fileID: 1629710828}
 --- !u!1 &1668209073
 GameObject:
@@ -5517,6 +5539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997784276}
   - component: {fileID: 1997784277}
+  - component: {fileID: 1997784278}
   m_Layer: 0
   m_Name: ObjAppearing
   m_TagString: Untagged
@@ -5557,6 +5580,20 @@ MonoBehaviour:
   currentScale: 0
   startScale: 0.1
   maxScale: 1
+--- !u!114 &1997784278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997784275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2977921e81fbfc747a2f2bcad5406ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootableObjectCtrl: {fileID: 45347479}
+  objAppearing: {fileID: 1997784277}
 --- !u!1 &2030764998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,7 +5773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0, z: 0}
-  rotSpeed: 0.5
+  rotSpeed: 1
   player: {fileID: 1091335912}
 --- !u!1 &2068721674
 GameObject:

@@ -14,7 +14,7 @@ public class JunkFly : ParentFly
         this.maxCam = 10;
     }
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
         GetFlyDirection();
     }
