@@ -7,8 +7,9 @@ public class ObjAppearWithoutShoot : ShootableObjectAbstract, ObjAppearObserver
     [Header("Without Shoot")]
     [SerializeField] protected ObjAppearing objAppearing;
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         this.RegisterAppearEvent();
     }
 
@@ -34,10 +35,12 @@ public class ObjAppearWithoutShoot : ShootableObjectAbstract, ObjAppearObserver
     public void OnAppearStart()
     {
         this.shootableObjectCtrl.ObjShooting.gameObject.SetActive(false);
+        this.shootableObjectCtrl.ObjLookAtTarget.gameObject.SetActive(false);
     }
 
     public void OnAppearFinish()
     {
         this.shootableObjectCtrl.ObjShooting.gameObject.SetActive(true);
+        this.shootableObjectCtrl.ObjLookAtTarget.gameObject.SetActive(true);
     }
 }

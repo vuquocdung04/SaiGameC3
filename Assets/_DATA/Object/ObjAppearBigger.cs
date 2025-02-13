@@ -10,8 +10,9 @@ public class ObjAppearBigger : ObjAppearing
     [SerializeField] protected float startScale = 0.1f;
     [SerializeField] protected float maxScale = 1f;
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         this.InitScale();
     }
 

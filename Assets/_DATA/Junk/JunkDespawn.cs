@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JunkDespawn : DespawnByDistance
 {
-    private void OnEnable()
+    protected override void OnEnable()
     {
         this.distance = 0f;
     }
