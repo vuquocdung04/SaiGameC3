@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCtrl : ShootableObjectCtrl
+public class EnemyCtrl : AbilitiObjectCtrl
 {
     protected override string GetObjectTypeName()
     {

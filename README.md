@@ -100,3 +100,6 @@
 		- SpawnerRandom gọi SpawnerCtrl.
 	- 🔴SpawnerCtrl cần gọi Spawner<T> đúng kiểu nhưng lại không biết T là gì.
 	- 🔴Unity không cho phép serialize generic, nên không thể kéo Spawner<T> vào Editor.
+## ☀️13/2:
+- E56 ->
+	

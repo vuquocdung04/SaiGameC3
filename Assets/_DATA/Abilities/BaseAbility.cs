@@ -5,6 +5,8 @@ using UnityEngine;
 public class BaseAbility : LoadAutoComponents
 {
     [Header("Base Ability")]
+    [SerializeField] protected Abilities abilities;
+    public Abilities Abilities => abilities;
     [SerializeField] protected float timer = 2f;
     [SerializeField] protected float delay = 2f;
     [SerializeField] protected bool isRead = false;
@@ -13,6 +15,17 @@ public class BaseAbility : LoadAutoComponents
     protected virtual void FixedUpdate()
     {
         this.Timing();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadAbilities();
+    }
+    protected virtual void LoadAbilities()
+    {
+        if (abilities != null) return;
+        abilities = GetComponentInParent<Abilities>();
     }
 
     protected virtual void Timing()
