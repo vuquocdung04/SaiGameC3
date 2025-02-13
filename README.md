@@ -101,5 +101,11 @@
 	- 🔴SpawnerCtrl cần gọi Spawner<T> đúng kiểu nhưng lại không biết T là gì.
 	- 🔴Unity không cho phép serialize generic, nên không thể kéo Spawner<T> vào Editor.
 ## ☀️13/2:
-- E56 ->
-	
+- E56 -> E70:
+	- 🟢Chia nhỏ vấn đề ra:
+		- vd: Script Movement để move và rotation thì tách riêng hết ra
+	- 🟢Code Modify:
+		- Junk, Ship, MotherShip đều có chung **Script**: trong đó có 2 thuộc tính
+			- speed, rotationSpeed là khác nhau
+		- 👉 thay vì tạo 3 script mới kế thừa từ **Script** chung đó rồi định nghĩa lại 2 thuộc tính: _speed_, _rotationSpeed_
+		- 👉 Thì tạo 1 script mới: định nghĩa lại các hàm public Speed, Rotation rồi cho vào Start => Khi game start thì thông số mới sẽ được chỉnh
