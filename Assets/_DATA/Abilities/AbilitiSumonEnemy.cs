@@ -30,6 +30,7 @@ public class AbilitiSumonEnemy : AbilitySummon
     {
         if (this.minions.Count >= this.minionLimit) return;
         base.Summoning();
+        
     }
 
 
