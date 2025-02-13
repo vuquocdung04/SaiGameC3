@@ -26,6 +26,6 @@ public class SpawnerCtrl : LoadAutoComponents
     protected virtual void LoadSpawnPoints()
     {
         if (spawnPoints != null) return;
-        spawnPoints = Transform.FindObjectOfType<SpawnPoints>();
+        spawnPoints = GameObject.Find("SceneSpawnPoints").GetComponent<SpawnPoints>();
     }
 }
