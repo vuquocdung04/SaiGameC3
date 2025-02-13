@@ -241,6 +241,7 @@ MonoBehaviour:
   shooting: {fileID: 311925468}
   objMovement: {fileID: 1650691464}
   objLookAtTarget: {fileID: 2067458469}
+  spawner: {fileID: 210888388}
   spawnPoints: {fileID: 132984376}
 --- !u!4 &45347480
 Transform:
@@ -2627,6 +2628,7 @@ MonoBehaviour:
   shooting: {fileID: 1588575003}
   objMovement: {fileID: 110723319}
   objLookAtTarget: {fileID: 477823079}
+  spawner: {fileID: 0}
   spawnPoints: {fileID: 883960359}
 --- !u!4 &854634756
 Transform:

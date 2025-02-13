@@ -21,6 +21,9 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
 
     [SerializeField] protected ObjLookAtTarget objLookAtTarget;
     public ObjLookAtTarget ObjLookAtTarget => objLookAtTarget;
+
+    [SerializeField] protected Spawner spawner;
+    public Spawner Spawner => spawner;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -30,6 +33,7 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
         this.LoadObjShooting();
         this.LoadObjMovement();
         this.LoadObjLookAtTarget();
+        this.LoadSpawner();
     }
 
     protected virtual void LoadModel()
@@ -66,6 +70,11 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
     {
         if (objLookAtTarget != null) return;
         objLookAtTarget = GetComponentInChildren<ObjLookAtTarget>();
+    }
+    protected virtual void LoadSpawner()
+    {
+        if (spawner != null) return;
+        spawner = transform.parent?.parent?.GetComponent<Spawner>();
     }
     protected abstract string GetObjectTypeName();
 }
