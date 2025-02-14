@@ -12,10 +12,10 @@ public abstract class BaseText : LoadAutoComponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadButton();
+        this.LoadText();
     }
 
-    protected virtual void LoadButton()
+    protected virtual void LoadText()
     {
         if (text != null) return;
         text = GetComponent<TMP_Text>();
