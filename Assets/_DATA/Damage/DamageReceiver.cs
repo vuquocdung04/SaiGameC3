@@ -6,7 +6,9 @@ using UnityEngine;
 public abstract class DamageReceiver : LoadAutoComponents
 {
     [SerializeField] protected float hp;
+    public float Hp => hp;
     [SerializeField] protected float hpMax;
+    public float HpMax => hpMax;
     [SerializeField] protected bool isDead;
 
     [SerializeField] protected CircleCollider2D circleCollider;
