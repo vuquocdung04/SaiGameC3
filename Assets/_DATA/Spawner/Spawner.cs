@@ -59,8 +59,7 @@ public abstract class Spawner :LoadAutoComponents
     {
         Transform newPrefab = this.GetObjFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
-
-        newPrefab.parent = this.holders;
+        newPrefab.SetParent(this.holders);
         this.spawnedCount++;
         return newPrefab;
 

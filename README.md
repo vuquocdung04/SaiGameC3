@@ -126,3 +126,6 @@
 	- 🟢 Khi chọc vào **TMP_TEXT** thì dùng _".text"_ hay "_.SetText()":
 		- 👉 _".SetText()"_ có thể giúp giảm bộ nhớ cấp phát (garbage collection)
 		- 👉 nó hạn chế việc tạo đối tượng string mới
+	- 🟢 Khi nào dùng **.parent** khi nào dùng **SetParent()**
+		- 👉 khi sét Parent cho UI, vì Transform UI khác với obj thường nên dùng _.parent_ sẽ gây warning
+		- 👉 Dùng **SetParent()**

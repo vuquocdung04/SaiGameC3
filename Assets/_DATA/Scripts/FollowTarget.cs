@@ -27,4 +27,11 @@ public class FollowTarget : LoadAutoComponents
         if (target == null) return;
         transform.position = Vector3.Lerp(transform.position, this.target.position,speed * Time.fixedDeltaTime);
     }
+
+    // ham set target neu khong co lien ket loadcomponent
+
+    public virtual void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
 }
