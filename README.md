@@ -141,3 +141,7 @@
 		- 🔹_Scroll Sensitivity_: độ mượt khi lăn chuột
 		- 🔹_Deceleration Rate_: Tốc độ giảm dần khi thả ra (áp dụng khi "Inertia" bật).
 		- 🔹_Elasticity_:Độ đàn hồi khi cuộn vượt giới hạn (áp dụng khi chọn "Elastic").
+	- 📌_**Note**_: Static Rigidbody2D & Hiệu suất:
+		- 🔹Thêm Rigidbody2D (Static) vào Ground/Tường giúp tối ưu hiệu suất vì Unity xử lý va chạm nhanh hơn.
+		- 🔹Nếu Collider2D không có Rigidbody2D, Unity phải tính toán lại toàn bộ hệ thống vật lý khi có va chạm với Rigidbody2D (Dynamic) → tốn tài nguyên hơn.
+		- 👉 Chỉ bỏ Rigidbody2D nếu vật thể không có va chạm hoặc không dùng hệ thống vật lý.
