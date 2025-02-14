@@ -15,8 +15,15 @@ public class UIInventory : LoadAutoComponents
 
     protected virtual void Start()
     {
-        this.Close();
+        //this.Close();
     }
+
+    protected virtual void FixedUpdate()
+    {
+
+    }
+
+
 
     // ki thuat double click la close 
     public virtual void Toggle()
@@ -36,5 +43,14 @@ public class UIInventory : LoadAutoComponents
     {
         gameObject.SetActive(false);
         this.isOpen =false;
+    }
+
+
+    protected virtual void ShowItem()
+    {
+        if (!this.isOpen) return;
+        float itemCount = PlayerCtrl.Instance.ShipCtrl.Inventory.Items.Count;
+        Debug.Log("itemCount :" + itemCount);
+
     }
 }

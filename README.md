@@ -137,3 +137,7 @@
 			- ở trong nơi cần gọi thì tạo 1 Component đó rồi GetComponent xong truyền ngược lại vào method
 				- vd: _ShootableObjectCtrl newEnemyCtrl = newEnemy.GetComponent<ShootableObjectCtrl>()_
 				- 👉 _SetObjShootCtrl(newEnemyCtrl)_ là xong
+	- 🟢Scroll View (UI):
+		- 🔹_Scroll Sensitivity_: độ mượt khi lăn chuột
+		- 🔹_Deceleration Rate_: Tốc độ giảm dần khi thả ra (áp dụng khi "Inertia" bật).
+		- 🔹_Elasticity_:Độ đàn hồi khi cuộn vượt giới hạn (áp dụng khi chọn "Elastic").
