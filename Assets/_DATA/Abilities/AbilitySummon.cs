@@ -15,7 +15,7 @@ public class AbilitySummon : BaseAbility
 
     protected virtual void Summoning()
     {
-        if (!isRead) return;
+        if (!isReady) return;
         this.Summon();
     }
     //spawn enemy

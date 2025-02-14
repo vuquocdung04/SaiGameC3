@@ -112,3 +112,14 @@
 	- 🟢Toán tử ?. trong C# (Null-conditional Operator)
 		- 👉 Mục đích: Tránh lỗi _NullReferenceException_ khi gọi phương thức hoặc truy cập thuộc tính của biến có thể null.
 		- 🔹_Ví Dụ_: string name = player?.character?.name;
+
+## ☀️14/2:
+- E71 -> :
+	- 🟢**Movement**: thay vì cho đối tượng đi chuyển theo chuột (gán pos đối tượng bằng input.mousePosition) thì:
+		- đối tượng đi theo 1 đường thẳng cố định trước mặt
+		- đường thẳng đi theo chuột
+		- 👉 fix được đối tượng quay 360 độ theo chuột, giờ nếu muốn quay thì nó phải đi 1 vòng tròn có bán kính = đường thẳng đấy
+	- 🟢Tính năng _**Dash**_:
+		- Thay vì code phức tạp như trong video thì mình nghĩ nên chỉ cần 1 script, tạo lại bộ đếm thời gian dash
+		- Phức tạp ở điểm nào ?:
+			- _AbilityWarp_, _AbilityWarpFromInput_, _InputManager_ trong code để biết rõ
