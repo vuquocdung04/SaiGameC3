@@ -57,7 +57,7 @@ public abstract class DamageReceiver : LoadAutoComponents
         CheckIsDead();
     }
 
-    protected virtual bool IsDead()
+    public virtual bool IsDead()
     {
         return this.hp <= 0; // return true neu hp< 0
     }

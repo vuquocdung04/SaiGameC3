@@ -9,6 +9,8 @@ public class HPBar : LoadAutoComponents
     [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
     [SerializeField] protected SliderHP sliderHp;
     [SerializeField] protected FollowTarget followTarget;
+    [SerializeField] protected Spawner spawner;
+
 
 
     protected virtual void FixedUpdate()
@@ -21,8 +23,14 @@ public class HPBar : LoadAutoComponents
         base.LoadComponents();
         this.LoadSliderHP();
         this.LoadFollowTarget();
+        this.LoadSpawner();
     }
 
+    protected virtual void LoadSpawner()
+    {
+        if (spawner != null) return;
+        spawner = GetComponentInParent<Spawner>();
+    }
     protected virtual void LoadFollowTarget()
     {
         if (followTarget != null) return;
@@ -38,17 +46,25 @@ public class HPBar : LoadAutoComponents
     {
         if (shootableObjectCtrl == null) return;
 
+        bool isDead = this.shootableObjectCtrl.DamageReceiver.IsDead();
+        if (isDead)
+        {
+            this.spawner.Despawn(transform);
+            return;
+        }
+
         float hp = this.shootableObjectCtrl.DamageReceiver.Hp;
         float maxHp = this.shootableObjectCtrl.DamageReceiver.HpMax;
 
         this.sliderHp.SetCurrentHp(hp);
         this.sliderHp.SetMaxHp(maxHp);
+
     }
 
     // vi ShotableObjCtrl khong loadcomponent duoc thi phai tao ham nay
     public virtual void SetObjShootCtrl(ShootableObjectCtrl shootableObjectCtrl)
     {
-
+        this.shootableObjectCtrl = shootableObjectCtrl;
     }
 
     public virtual void SetFollowTarget(Transform target)
