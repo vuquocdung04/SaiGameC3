@@ -24,6 +24,9 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
 
     [SerializeField] protected Spawner spawner;
     public Spawner Spawner => spawner;
+
+    [SerializeField] protected DamageReceiver damageReceiver;
+    public DamageReceiver DamageReceiver => damageReceiver;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -34,8 +37,14 @@ public abstract class ShootableObjectCtrl : LoadAutoComponents
         this.LoadObjMovement();
         this.LoadObjLookAtTarget();
         this.LoadSpawner();
+        this.LoadDamageReceiver();
     }
 
+    protected virtual void LoadDamageReceiver()
+    {
+        if (damageReceiver != null) return;
+        damageReceiver = GetComponentInChildren<DamageReceiver>();
+    }
     protected virtual void LoadModel()
     {
         if (model != null) return;

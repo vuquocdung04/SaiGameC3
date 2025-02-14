@@ -123,3 +123,6 @@
 		- Thay vì code phức tạp như trong video thì mình nghĩ nên chỉ cần 1 script, tạo lại bộ đếm thời gian dash
 		- Phức tạp ở điểm nào ?:
 			- _AbilityWarp_, _AbilityWarpFromInput_, _InputManager_ trong code để biết rõ
+	- 🟢 Khi chọc vào **TMP_TEXT** thì dùng _".text"_ hay "_.SetText()":
+		- 👉 _".SetText()"_ có thể giúp giảm bộ nhớ cấp phát (garbage collection)
+		- 👉 nó hạn chế việc tạo đối tượng string mới
