@@ -129,3 +129,11 @@
 	- 🟢 Khi nào dùng **.parent** khi nào dùng **SetParent()**
 		- 👉 khi sét Parent cho UI, vì Transform UI khác với obj thường nên dùng _.parent_ sẽ gây warning
 		- 👉 Dùng **SetParent()**
+	- 🟢 E79:
+		- Cách để liên kết component khi mà không có liên kết
+		- Nếu không load được parent hay children thì sao:
+			- Tạo 1 method với tham trị là Component cần liên kết
+				- vd: _void SetObjShootCtrl(ShootableObjectCtrl ctrl)_
+			- ở trong nơi cần gọi thì tạo 1 Component đó rồi GetComponent xong truyền ngược lại vào method
+				- vd: _ShootableObjectCtrl newEnemyCtrl = newEnemy.GetComponent<ShootableObjectCtrl>()_
+				- 👉 _SetObjShootCtrl(newEnemyCtrl)_ là xong

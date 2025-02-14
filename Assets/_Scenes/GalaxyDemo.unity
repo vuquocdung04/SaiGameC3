@@ -835,6 +835,7 @@ MonoBehaviour:
   shootableObjectCtrl: {fileID: 0}
   sliderHp: {fileID: 1887984781}
   followTarget: {fileID: 109453335}
+  spawner: {fileID: 2090279955}
 --- !u!1 &110723317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6688,8 +6689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0, z: 0}
-  speed: 0.1
-  distance: 0.5
+  speed: 0.05
+  distance: 0
   minDistance: 1
   target: {fileID: 1629710828}
 --- !u!1 &1668209073
