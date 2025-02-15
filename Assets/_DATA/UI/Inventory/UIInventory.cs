@@ -65,33 +65,21 @@ public class UIInventory : UIInventoryAbstract
 
     protected virtual void SortItems()
     {
-        switch (this.inventorySort)
-        {
-            case InventorySort.ByName:
-                Debug.Log("Sort by name");
-                break;
-            case InventorySort.ByCount:
-                Debug.Log("Sort by count");
-                break;
-            default:
-                Debug.Log("No sort");
-                break;
-        }
-    }
-    protected virtual void SortByName()
-    {
+        if (this.inventorySort == InventorySort.NoSort) return;
+
         int itemCount = this.UIInventoryCtrl.Content.childCount;
         Transform currentItem, nextItem;
         UIItemInventory currentUIItem, nextUIItem;
         ItemProfileSO currentProfile, nextProfile;
 
         string currentName, nextName;
+        int currentCount, nextCount;
 
         bool isSorting = false;
         for (int i = 0; i < itemCount - 1; i++)
         {
             currentItem = this.UIInventoryCtrl.Content.GetChild(i);
-            nextItem = this.UIInventoryCtrl.Content.GetChild(i+1);
+            nextItem = this.UIInventoryCtrl.Content.GetChild(i + 1);
 
             currentUIItem = currentItem.GetComponent<UIItemInventory>();
             nextUIItem = nextItem.GetComponent<UIItemInventory>();
@@ -99,20 +87,32 @@ public class UIInventory : UIInventoryAbstract
             currentProfile = currentUIItem.ItemInventory.itemProfile;
             nextProfile = nextUIItem.ItemInventory.itemProfile;
 
-            currentName = currentProfile.itemName;
-            nextName = nextProfile.itemName;
+            bool isSwap = false;
 
-            int compare = string.Compare(currentName,nextName);
-
-            if (compare == 1)
+            switch (this.inventorySort)
             {
-                this.SwapItems(currentItem,nextItem);
-                isSorting = true;
+                case InventorySort.ByName:
+                    currentName = currentProfile.itemName;
+                    nextName = nextProfile.itemName;
+                    isSwap = string.Compare(currentName, nextName) == 1;
+                    break;
+                case InventorySort.ByCount:
+                    currentCount = currentUIItem.ItemInventory.itemCount;
+                    nextCount = nextUIItem.ItemInventory.itemCount;
+                    isSwap = currentCount < nextCount;
+                    break;
             }
 
+            if (isSwap)
+            {
+                this.SwapItems(currentItem, nextItem);
+                isSorting = true;
+            }
         }
 
-        if(isSorting) SortByName();
+        if (isSorting) SortItems();
+
+
     }
 
     protected virtual void SwapItems(Transform currentItem, Transform nextItem)
