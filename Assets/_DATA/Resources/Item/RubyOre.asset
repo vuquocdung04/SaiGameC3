@@ -16,4 +16,5 @@ MonoBehaviour:
   itemType: 1
   itemName: RubyOre
   defaultMaxStack: 7
+  sprite: {fileID: 21300000, guid: 236e69b33b77f484bbc3477d55590fd6, type: 3}
   upgradeLevels: []

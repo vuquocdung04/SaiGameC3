@@ -15,7 +15,8 @@ public class Inventory : LoadAutoComponents
     {
         AddItem(ItemCode.Sword,1);
         AddItem(ItemCode.IronOre,21);
-        AddItem(ItemCode.GoldOre,7);
+        AddItem(ItemCode.GoldOre,15);
+        AddItem(ItemCode.RubyOre,14);
     }
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
@@ -138,6 +139,7 @@ public class Inventory : LoadAutoComponents
     {
         ItemInventory itemInventory = new ItemInventory
         {
+            itemID = ItemInventory.RandomItemID(),
             itemProfile = itemProfileSO,
             maxStack = itemProfileSO.defaultMaxStack,
         };

@@ -16,4 +16,5 @@ MonoBehaviour:
   itemType: 1
   itemName: IronOre
   defaultMaxStack: 7
+  sprite: {fileID: 21300000, guid: 4ebdc7dc1411b104a957c9c5e55dbed6, type: 3}
   upgradeLevels: []
