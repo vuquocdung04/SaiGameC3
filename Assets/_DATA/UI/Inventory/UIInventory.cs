@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class UIInventory : LoadAutoComponents
+public class UIInventory : UIInventoryAbstract
 {
     static UIInventory instance;
     public static UIInventory Instance => instance;
@@ -12,20 +13,16 @@ public class UIInventory : LoadAutoComponents
         if (UIInventory.instance != null) Debug.LogError("Only 1 BulletSpawner allow to exist");
         UIInventory.instance = this;
     }
-
     protected virtual void Start()
     {
-        //this.Close();
+        InvokeRepeating(nameof(ShowItem),1,1);
     }
 
     protected virtual void FixedUpdate()
     {
-
+        //this.ShowItem();
     }
 
-
-
-    // ki thuat double click la close 
     public virtual void Toggle()
     {
         this.isOpen = !this.isOpen;
@@ -35,22 +32,36 @@ public class UIInventory : LoadAutoComponents
 
     public virtual void Open()
     {
-        gameObject.SetActive(true);
-        this.isOpen = true; 
+        this.uIInventoryCtrl.gameObject.SetActive(true);
+        this.isOpen = true;
     }
 
     public virtual void Close()
     {
-        gameObject.SetActive(false);
-        this.isOpen =false;
+        this.uIInventoryCtrl.gameObject.SetActive(false);
+        this.isOpen = false;
     }
-
 
     protected virtual void ShowItem()
     {
         if (!this.isOpen) return;
-        float itemCount = PlayerCtrl.Instance.ShipCtrl.Inventory.Items.Count;
-        Debug.Log("itemCount :" + itemCount);
+        //xoa het item
+
+        this.ClearItem();
+        List<ItemInventory> items = PlayerCtrl.Instance.ShipCtrl.Inventory.Items;
+        UIInventorySpawner spawner = this.UIInventoryCtrl.UIInventorySpawner;
+
+        foreach (ItemInventory item in items)
+        {
+            spawner.SpawnItem(item);
+        }
 
     }
+
+    protected virtual void ClearItem()
+    {
+        this.UIInventoryCtrl.UIInventorySpawner.ClearItem();
+    }
+    
+
 }

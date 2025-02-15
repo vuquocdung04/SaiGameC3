@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCode: 1000
   itemType: 2
-  itemName: name
+  itemName: Sword
   defaultMaxStack: 1
   upgradeLevels:
   - itemRecipeIngredients:

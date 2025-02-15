@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCode: 2
   itemType: 1
-  itemName: name
+  itemName: GoldOre
   defaultMaxStack: 7
+  upgradeLevels: []

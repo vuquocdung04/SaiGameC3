@@ -14,7 +14,7 @@ public class Inventory : LoadAutoComponents
     private void Start()
     {
         AddItem(ItemCode.Sword,1);
-        AddItem(ItemCode.IronOre,7);
+        AddItem(ItemCode.IronOre,21);
         AddItem(ItemCode.GoldOre,7);
     }
 
