@@ -114,7 +114,7 @@
 		- 🔹_Ví Dụ_: string name = player?.character?.name;
 
 ## ☀️14/2:
-- E71 -> :
+- E71 -> E83:
 	- 🟢**Movement**: thay vì cho đối tượng đi chuyển theo chuột (gán pos đối tượng bằng input.mousePosition) thì:
 		- đối tượng đi theo 1 đường thẳng cố định trước mặt
 		- đường thẳng đi theo chuột
@@ -145,3 +145,8 @@
 		- 🔹Thêm Rigidbody2D (Static) vào Ground/Tường giúp tối ưu hiệu suất vì Unity xử lý va chạm nhanh hơn.
 		- 🔹Nếu Collider2D không có Rigidbody2D, Unity phải tính toán lại toàn bộ hệ thống vật lý khi có va chạm với Rigidbody2D (Dynamic) → tốn tài nguyên hơn.
 		- 👉 Chỉ bỏ Rigidbody2D nếu vật thể không có va chạm hoặc không dùng hệ thống vật lý.
+## ☀️15/2:
+- E84 ->:
+	- 🟢Thống nhất cấu trúc code:
+		- 🔹Các _"obj"_ cùng cấp hoặc muốn tương tác với các thằng _"obj"_ thì phải gọi gián tiếp thông qua 1 thằng _"Ctrl"_
+		- 🔹Còn _"obj"_ thì có thể gọi trực tiếp được các thằng con của nó
