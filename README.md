@@ -82,6 +82,7 @@
 ## ☀️10/2:
 - E42 -> E44:
 	- 🟢Liên kết code bằng oop rối quá, quá nhiều ràng buộc ở inventory
+	- 🟢Coi lại 3 lần mà mới hiểu chút, căng thẳng
 ## ☀️11/2:
 - E45 -> E48:
 	- 🟢Nay biết thêm 1 _**Fact**_ mới:
@@ -135,7 +136,7 @@
 			- Tạo 1 method với tham trị là Component cần liên kết
 				- vd: _void SetObjShootCtrl(ShootableObjectCtrl ctrl)_
 			- ở trong nơi cần gọi thì tạo 1 Component đó rồi GetComponent xong truyền ngược lại vào method
-				- vd: _ShootableObjectCtrl newEnemyCtrl = newEnemy.GetComponent<ShootableObjectCtrl>()_
+				- vd: _ShootableObjectCtrl newEnemyCtrl = newEnemy.GetComponent<.ShootableObjectCtrl>()_
 				- 👉 _SetObjShootCtrl(newEnemyCtrl)_ là xong
 	- 🟢Scroll View (UI):
 		- 🔹_Scroll Sensitivity_: độ mượt khi lăn chuột
@@ -158,3 +159,15 @@
 			- kế thừa Abstract
 		- 👉 Thống nhất gọi qua _Kế thừa Abstract_
 		- 👉 Còn singleton để các thằng khác, ngoài phạm vi cha con gọi tới nó
+## 📌Note:(sẽ ✅ nếu hoàn thành)
+- Qua 100 tập c3: Tính năng bắt buộc phải nhớ
+	- 🟢Inventory
+	- 🟢Hệ thống UI Drag Drop
+	- 🟢Pooling Obj
+	- 🟢Abilities(khả năng: vd: spawner, warp, skill,etc)
+	- 🟢Players + Enemies
+- Mở rộng, mục tiêu tương lai
+	- 📝Observer
+		- 🔹Ứng dụng được observer trong c3 này (ứng dụng được thì master m* luôn =)))
+	- 📝Học lại Inventory
+	
