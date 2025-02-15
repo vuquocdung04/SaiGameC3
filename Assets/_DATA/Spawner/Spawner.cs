@@ -83,6 +83,8 @@ public abstract class Spawner :LoadAutoComponents
 
     public virtual void Despawn(Transform obj)
     {
+        if (this.poolObjs.Contains(obj)) return;
+
         poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
         this.spawnedCount--;

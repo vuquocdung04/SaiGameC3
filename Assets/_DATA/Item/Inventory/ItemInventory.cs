@@ -1,11 +1,14 @@
 
 using System;
+using UnityEngine.Experimental.GlobalIllumination;
 
 [Serializable]
 
 // hieu la struct cung duoc
 public class ItemInventory 
 {
+
+    public string itemID;
     public ItemProfileSO itemProfile;
     public int itemCount = 0;
     public int maxStack = 7;
@@ -15,10 +18,15 @@ public class ItemInventory
     {
         ItemInventory item = new ItemInventory
         {
+            itemID = ItemInventory.RandomItemID(),
             itemProfile = this.itemProfile,
             itemCount = this.itemCount,
             maxStack = this.upgradeLevel
         };
         return item;
+    }
+    public static string RandomItemID()
+    {
+        return RandomStringGenerator.Generator(27);
     }
 }
