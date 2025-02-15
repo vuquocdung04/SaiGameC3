@@ -16,7 +16,7 @@ public class SliderHP : BaseSlider
     protected virtual void HpShowing()
     {
         float hpPercent = this.currentHP/ this.maxHp;
-        Debug.LogError(currentHP);
+        //Debug.LogError(currentHP);
         this.slider.value = hpPercent;
     }
 

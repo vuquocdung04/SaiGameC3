@@ -146,7 +146,15 @@
 		- 🔹Nếu Collider2D không có Rigidbody2D, Unity phải tính toán lại toàn bộ hệ thống vật lý khi có va chạm với Rigidbody2D (Dynamic) → tốn tài nguyên hơn.
 		- 👉 Chỉ bỏ Rigidbody2D nếu vật thể không có va chạm hoặc không dùng hệ thống vật lý.
 ## ☀️15/2:
-- E84 ->:
+- E84 -> E99:
 	- 🟢Thống nhất cấu trúc code:
 		- 🔹Các _"obj"_ cùng cấp hoặc muốn tương tác với các thằng _"obj"_ thì phải gọi gián tiếp thông qua 1 thằng _"Ctrl"_
 		- 🔹Còn _"obj"_ thì có thể gọi trực tiếp được các thằng con của nó
+		- 🔹Tạo 1 thằng Abstract chỉ có nhiệm vụ: LoadCtrl()
+		- 👉 Các thằng con muốn gọi tới _"Ctrl"_ thì kế thừa Abstract
+	- 🟢Thằng _"Ctrl"_ là singleton:
+		- 🔹Các thằng con muốn gọi tới Ctrl thì có 2 cách gọi:
+			- gọi singleton
+			- kế thừa Abstract
+		- 👉 Thống nhất gọi qua _Kế thừa Abstract_
+		- 👉 Còn singleton để các thằng khác, ngoài phạm vi cha con gọi tới nó
