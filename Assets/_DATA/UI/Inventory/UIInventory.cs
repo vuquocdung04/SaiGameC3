@@ -78,7 +78,51 @@ public class UIInventory : UIInventoryAbstract
                 break;
         }
     }
+    protected virtual void SortByName()
+    {
+        int itemCount = this.UIInventoryCtrl.Content.childCount;
+        Transform currentItem, nextItem;
+        UIItemInventory currentUIItem, nextUIItem;
+        ItemProfileSO currentProfile, nextProfile;
 
+        string currentName, nextName;
+
+        bool isSorting = false;
+        for (int i = 0; i < itemCount - 1; i++)
+        {
+            currentItem = this.UIInventoryCtrl.Content.GetChild(i);
+            nextItem = this.UIInventoryCtrl.Content.GetChild(i+1);
+
+            currentUIItem = currentItem.GetComponent<UIItemInventory>();
+            nextUIItem = nextItem.GetComponent<UIItemInventory>();
+
+            currentProfile = currentUIItem.ItemInventory.itemProfile;
+            nextProfile = nextUIItem.ItemInventory.itemProfile;
+
+            currentName = currentProfile.itemName;
+            nextName = nextProfile.itemName;
+
+            int compare = string.Compare(currentName,nextName);
+
+            if (compare == 1)
+            {
+                this.SwapItems(currentItem,nextItem);
+                isSorting = true;
+            }
+
+        }
+
+        if(isSorting) SortByName();
+    }
+
+    protected virtual void SwapItems(Transform currentItem, Transform nextItem)
+    {
+        int currentIndex = currentItem.GetSiblingIndex();
+        int nextIndex = nextItem.GetSiblingIndex();
+
+        currentItem.SetSiblingIndex(nextIndex);
+        nextItem.SetSiblingIndex(currentIndex);
+    }
 
     protected virtual void ClearItem()
     {
