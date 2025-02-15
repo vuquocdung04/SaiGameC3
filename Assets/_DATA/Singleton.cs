@@ -5,7 +5,7 @@
 /// <summary>
 /// Use the singleton to manage persistent data between scenes.
 /// </summary>
-public abstract class Singleton<T> : LoadAutoComponents where T : LoadAutoComponents
+public abstract class Singleton<T> : LoadAutoComponents where T : MonoBehaviour
 {
     public static T Instance;
     //public bool m_DontDestroyOnLoad = true;
