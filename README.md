@@ -1,4 +1,5 @@
 # SaiGameC3
+<<<<<<< HEAD
 ## Start 2/2/2025: 
 *Hành trình học 100 tập toturial c3 trên kênh saigame*
 ## ☀️Run 6/2: 
@@ -171,3 +172,7 @@
 		- 🔹Ứng dụng được observer trong c3 này (ứng dụng được thì master m* luôn =)))
 	- 📝Học lại Inventory
 	
+=======
+=== Start 2/2/2025 === 
+Hành trình học 100 tập toturial c3 trên kênh saigame của tôi 
+>>>>>>> 1ce14ed (Update README.md)
